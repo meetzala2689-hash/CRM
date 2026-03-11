@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
   const [dateTime, setDateTime] = useState(new Date());
@@ -9,11 +10,12 @@ function Dashboard() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editUserId, setEditUserId] = useState(null);
 
-  // const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
   const [users, setUsers] = useState(() => {
     const savedUsers = localStorage.getItem("users");
     return savedUsers ? JSON.parse(savedUsers) : [];
   });
+
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
@@ -21,7 +23,7 @@ function Dashboard() {
   const departments = ["All", "IT", "HR", "Finance", "Marketing"];
 
   const initialEmployeeState = {
-    // name: "",
+    name: "",
     organization: "",
     email: "",
     number: "",
@@ -70,32 +72,35 @@ function Dashboard() {
       return;
     }
 
-    if (editUserId) {
-      // Editing existing user
+    if (editUserId !== null) {
+      // Update existing user
       setUsers(
-        users.map((u) => (u.id === editUserId ? { ...u, ...newEmployee } : u)),
+        users.map((u) =>
+          u.id === editUserId ? { ...newEmployee, id: editUserId } : u,
+        ),
       );
-      setEditUserId(null);
     } else {
-      // Adding new user
+      // Add new user
       setUsers([...users, { id: Date.now(), ...newEmployee }]);
     }
 
     setNewEmployee(initialEmployeeState);
+    setEditUserId(null);
     setIsModalOpen(false);
   };
 
   const handleEdit = (user) => {
-    setNewEmployee(user);
+    setNewEmployee(JSON.parse(JSON.stringify(user)));
     setEditUserId(user.id);
     setIsModalOpen(true);
   };
 
-  const handleDelete = (id) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
-      setUsers(users.filter((u) => u.id !== id));
-    }
-  };
+  // const handleDelete = (id) => {
+  //   if (window.confirm("Are you sure you want to delete this user?")) {
+  //     // setUsers(users.filter((u) => u.id !== id));
+  //     setUsers((prev) => prev.filter((u) => u.id !== id));
+  //   }
+  // };
 
   return (
     <div className="container-fluid p-4">
@@ -168,17 +173,13 @@ function Dashboard() {
             ))}
           </select>
           <button
-            className={`btn btn-sm ${
-              view === "grid" ? "btn-primary" : "btn-outline-primary"
-            }`}
+            className={`btn btn-sm ${view === "grid" ? "btn-primary" : "btn-outline-primary"}`}
             onClick={() => setView("grid")}
           >
             Grid
           </button>
           <button
-            className={`btn btn-sm ${
-              view === "list" ? "btn-primary" : "btn-outline-primary"
-            }`}
+            className={`btn btn-sm ${view === "list" ? "btn-primary" : "btn-outline-primary"}`}
             onClick={() => setView("list")}
           >
             List
@@ -189,20 +190,34 @@ function Dashboard() {
       {/* GRID VIEW */}
       {view === "grid" && (
         <div className="row g-4">
-          {filteredUsers.map((user) => (
+          {filteredUsers.map((user, index) => (
             <div
-              key={user.id}
-              className="col-sm-6 col-md-4 col-lg-3 shadow-lg "
-              style={{ width: "340px", height: "300px" }}
+              key={user.id || index}
+              className="col-sm-6 col-md-4 col-lg-3 shadow-md"
+              style={{ width: "400px" }}
             >
-              <div className="card h-100 shadow-sm border-0 text-center p-3">
+              {/* <div className="card h-100 shadow-sm border-0 text-center p-3"> */}
+              {/* <div className="card h-100 shadow-sm border-0 p-3 transition hover-shadow-lg"> */}
+              <div
+                className="card h-100 shadow-sm border-0 p-3"
+                style={{ transition: "all 0.3s ease", cursor: "pointer" }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = "translateY(-6px)";
+                  e.currentTarget.classList.remove("shadow-sm");
+                  e.currentTarget.classList.add("shadow");
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = "translateY(0)";
+                  e.currentTarget.classList.remove("shadow-lg");
+                  e.currentTarget.classList.add("shadow-sm");
+                }}
+              >
                 <div
                   className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center mx-auto mb-3"
                   style={{ width: 40, height: 40, fontSize: "1.5rem" }}
                 >
-                  {user.name.charAt(0).toUpperCase()}
+                  {user.name?.charAt(0).toUpperCase()}
                 </div>
-                {/* <h5>{user.name}</h5> */}
                 <h5>{user.name}</h5>
                 <p className="mb-1">
                   <strong>Organization:</strong> {user.organization}
@@ -217,25 +232,28 @@ function Dashboard() {
                   <strong>Address:</strong> {user.street}, {user.city},{" "}
                   {user.state}, {user.country} - {user.postalCode}
                 </p>
-                <span className={`badge ${getBadgeClass(user.details)} mb-3`}>
+                {/* <span className={`badge ${getBadgeClass(user.details)} mb-3`}>
                   {user.details}
-                </span>
-                <span className={`badge ${getBadgeClass(user.details)} mb-3`}>
-                  {user.details}
-                </span>
+                </span> */}
                 <div className="d-flex gap-2">
-                   <button
-                    className="btn btn-outline-primary btn-sm w-50"
-                    // onClick={ }
+                  <button
+                    onClick={() => navigate("/project")}
+                    className="btn btn-outline-secondary w-50 border-0"
                   >
-                    View
+                    <i className="bi bi-eye me-1"></i> View
                   </button>
                   <button
-                    className="btn btn-outline-primary btn-sm w-50"
+                    className="btn btn-outline-primary btn-sm w-50 border-0"
                     onClick={() => handleEdit(user)}
                   >
-                    Edit
+                    <i className="bi bi-pencil-square me-1"></i> Edit
                   </button>
+                  {/* <button
+                    className="btn btn-outline-danger btn-sm"
+                    onClick={() => handleDelete(user.id)}
+                  >
+                    Delete
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -251,9 +269,15 @@ function Dashboard() {
               <tr>
                 <th>#</th>
                 <th>Name</th>
+                <th>Organization</th>
                 <th>Email</th>
                 <th>Number</th>
                 <th>Department</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Street</th>
+                <th>Postal Code</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -273,17 +297,23 @@ function Dashboard() {
                   <td>{user.postalCode}</td>
                   <td className="d-flex gap-2">
                     <button
+                      onClick={() => navigate("/project")}
+                      className="btn btn-outline-secondary w-50 border-0"
+                    >
+                      <i className="bi bi-eye me-1"></i> View
+                    </button>
+                    <button
                       className="btn btn-sm btn-primary"
                       onClick={() => handleEdit(user)}
                     >
                       Edit
                     </button>
-                    <button
+                    {/* <button
                       className="btn btn-sm btn-danger"
                       onClick={() => handleDelete(user.id)}
                     >
                       Delete
-                    </button>
+                    </button> */}
                   </td>
                 </tr>
               ))}
@@ -313,25 +343,23 @@ function Dashboard() {
                       }
                     />
                   </div>
-
                   <div className="mb-3">
                     <label className="form-label">Name</label>
                     <input
                       type="text"
                       className="form-control"
-                      value={newEmployee.name}
+                      value={newEmployee.name || ""}
                       onChange={(e) =>
                         setNewEmployee({ ...newEmployee, name: e.target.value })
                       }
                     />
                   </div>
-
                   <div className="mb-3">
                     <label className="form-label">Email</label>
                     <input
                       type="email"
                       className="form-control"
-                      value={newEmployee.email}
+                      value={newEmployee.email || ""}
                       onChange={(e) =>
                         setNewEmployee({
                           ...newEmployee,
@@ -340,13 +368,12 @@ function Dashboard() {
                       }
                     />
                   </div>
-
                   <div className="mb-3">
                     <label className="form-label">Phone Number</label>
                     <input
                       type="text"
                       className="form-control"
-                      value={newEmployee.number}
+                      value={newEmployee.number || ""}
                       onChange={(e) =>
                         setNewEmployee({
                           ...newEmployee,
@@ -355,12 +382,11 @@ function Dashboard() {
                       }
                     />
                   </div>
-
                   <div className="mb-3">
                     <label className="form-label">Department</label>
                     <select
                       className="form-select"
-                      value={newEmployee.details}
+                      value={newEmployee.details || "IT"}
                       onChange={(e) =>
                         setNewEmployee({
                           ...newEmployee,
@@ -376,7 +402,6 @@ function Dashboard() {
                     </select>
                   </div>
 
-                  {/* Address Information */}
                   <h6 className="mt-4">Address Information</h6>
                   <div className="row g-3">
                     <div className="col-md-6">
@@ -454,20 +479,36 @@ function Dashboard() {
 
                 <div className="modal-footer">
                   <button
-                    type="button"
                     className="btn btn-secondary"
                     onClick={() => {
                       setIsModalOpen(false);
                       setEditUserId(null);
+                      setNewEmployee(initialEmployeeState);
                     }}
                   >
                     Close
                   </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    onClick={handleSave}
-                  >
+                  {editUserId && (
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => {
+                        if (
+                          window.confirm(
+                            "Are you sure you want to delete this user?",
+                          )
+                        ) {
+                          setUsers(users.filter((u) => u.id !== editUserId));
+                          setIsModalOpen(false);
+                          setEditUserId(null);
+                          setNewEmployee(initialEmployeeState);
+                        }
+                      }}
+                    >
+                      Delete
+                    </button>
+                  )}
+
+                  <button className="btn btn-primary" onClick={handleSave}>
                     {editUserId ? "Update" : "Save"}
                   </button>
                 </div>
