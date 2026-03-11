@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar bg-body-tertiary shadow-sm">
+    <nav className="navbar bg-body-tertiary shadow-sm p-2 ">
       <div className="container-fluid">
         <a className="navbar-brand">Navbar</a>
         <form className="d-flex" role="search">

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
+// import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Dashboard from "./pages/Dashboard";
@@ -26,7 +26,7 @@ function App() {
           element={
             <PrivateRoute>
               <div className="d-flex">
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <div className="flex-grow-1">
                   <Navbar />
                   <div className="p-4">

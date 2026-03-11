@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Dashboard() {
@@ -7,22 +7,38 @@ function Dashboard() {
   const [search, setSearch] = useState("");
   const [filterDept, setFilterDept] = useState("All");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [editUserId, setEditUserId] = useState(null);
+
+  // const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState(() => {
+    const savedUsers = localStorage.getItem("users");
+    return savedUsers ? JSON.parse(savedUsers) : [];
+  });
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]);
+
+  const departments = ["All", "IT", "HR", "Finance", "Marketing"];
+
+  const initialEmployeeState = {
+    // name: "",
+    organization: "",
+    email: "",
+    number: "",
+    details: "IT",
+    country: "",
+    state: "",
+    city: "",
+    street: "",
+    postalCode: "",
+  };
+
+  const [newEmployee, setNewEmployee] = useState(initialEmployeeState);
 
   useEffect(() => {
     const timer = setInterval(() => setDateTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
-
-  const users = [
-    { id: 1, name: "Meet", email: "meet@gmail.com", number: "39294478747", details: "IT" },
-    { id: 2, name: "John", email: "john@gmail.com", number: "1234567890", details: "HR" },
-    { id: 3, name: "Alice", email: "alice@gmail.com", number: "9876543210", details: "Finance" },
-    { id: 4, name: "Bob", email: "bob@gmail.com", number: "5556667777", details: "IT" },
-    { id: 5, name: "Eve", email: "eve@gmail.com", number: "1112223333", details: "Marketing" },
-    { id: 6, name: "Charlie", email: "charlie@gmail.com", number: "4445556666", details: "HR" },
-  ];
-
-  const departments = ["All", "IT", "HR", "Finance", "Marketing"];
 
   const getBadgeClass = (dept) => {
     switch (dept) {
@@ -39,29 +55,65 @@ function Dashboard() {
     }
   };
 
-  const filteredUsers = users.filter(
-    (u) =>
-      (filterDept === "All" || u.details === filterDept) &&
-      (u.name.toLowerCase().includes(search.toLowerCase()) ||
-        u.email.toLowerCase().includes(search.toLowerCase()))
-  );
+  const filteredUsers = useMemo(() => {
+    return users.filter(
+      (u) =>
+        (filterDept === "All" || u.details === filterDept) &&
+        (u.name.toLowerCase().includes(search.toLowerCase()) ||
+          u.email.toLowerCase().includes(search.toLowerCase())),
+    );
+  }, [users, filterDept, search]);
+
+  const handleSave = () => {
+    if (!newEmployee.name || !newEmployee.email || !newEmployee.number) {
+      alert("Please fill all required fields!");
+      return;
+    }
+
+    if (editUserId) {
+      // Editing existing user
+      setUsers(
+        users.map((u) => (u.id === editUserId ? { ...u, ...newEmployee } : u)),
+      );
+      setEditUserId(null);
+    } else {
+      // Adding new user
+      setUsers([...users, { id: Date.now(), ...newEmployee }]);
+    }
+
+    setNewEmployee(initialEmployeeState);
+    setIsModalOpen(false);
+  };
+
+  const handleEdit = (user) => {
+    setNewEmployee(user);
+    setEditUserId(user.id);
+    setIsModalOpen(true);
+  };
+
+  const handleDelete = (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      setUsers(users.filter((u) => u.id !== id));
+    }
+  };
 
   return (
     <div className="container-fluid p-4">
-
       {/* Navbar */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Dashboard</h2>
-
-        <div className="d-flex align-items-center gap-3">
+        <div className="d-flex align-items-center gap-3 m-2">
           <span>🔔 Notifications</span>
           <span>{dateTime.toLocaleTimeString()}</span>
-
           <button
-            onClick={() => setIsModalOpen(true)}
+            onClick={() => {
+              setNewEmployee(initialEmployeeState);
+              setEditUserId(null);
+              setIsModalOpen(true);
+            }}
             className="btn btn-primary"
           >
-            + Add Employee
+            + Create Organization
           </button>
         </div>
       </div>
@@ -74,21 +126,18 @@ function Dashboard() {
             <h3>45</h3>
           </div>
         </div>
-
         <div className="col-md-3">
           <div className="card text-center shadow-sm p-3">
             <h6>Total Users</h6>
-            <h3>120</h3>
+            <h3>{users.length}</h3>
           </div>
         </div>
-
         <div className="col-md-3">
           <div className="card text-center shadow-sm p-3">
             <h6>Total Sales</h6>
             <h3>$9,500</h3>
           </div>
         </div>
-
         <div className="col-md-3">
           <div className="card text-center shadow-sm p-3">
             <h6>Active Orders</h6>
@@ -100,9 +149,7 @@ function Dashboard() {
       {/* User Management Header */}
       <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
         <h4 className="text-primary mb-0">User Management</h4>
-
         <div className="d-flex gap-2 flex-wrap">
-
           <input
             type="text"
             className="form-control form-control-sm"
@@ -111,7 +158,6 @@ function Dashboard() {
             onChange={(e) => setSearch(e.target.value)}
             style={{ minWidth: "200px" }}
           />
-
           <select
             className="form-select form-select-sm"
             value={filterDept}
@@ -121,16 +167,18 @@ function Dashboard() {
               <option key={dept}>{dept}</option>
             ))}
           </select>
-
           <button
-            className={`btn btn-sm ${view === "grid" ? "btn-primary" : "btn-outline-primary"}`}
+            className={`btn btn-sm ${
+              view === "grid" ? "btn-primary" : "btn-outline-primary"
+            }`}
             onClick={() => setView("grid")}
           >
             Grid
           </button>
-
           <button
-            className={`btn btn-sm ${view === "list" ? "btn-primary" : "btn-outline-primary"}`}
+            className={`btn btn-sm ${
+              view === "list" ? "btn-primary" : "btn-outline-primary"
+            }`}
             onClick={() => setView("list")}
           >
             List
@@ -142,28 +190,53 @@ function Dashboard() {
       {view === "grid" && (
         <div className="row g-4">
           {filteredUsers.map((user) => (
-            <div key={user.id} className="col-sm-6 col-md-4 col-lg-3">
+            <div
+              key={user.id}
+              className="col-sm-6 col-md-4 col-lg-3 shadow-lg "
+              style={{ width: "340px", height: "300px" }}
+            >
               <div className="card h-100 shadow-sm border-0 text-center p-3">
-
                 <div
                   className="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center mx-auto mb-3"
-                  style={{ width: 70, height: 70, fontSize: "1.5rem" }}
+                  style={{ width: 40, height: 40, fontSize: "1.5rem" }}
                 >
                   {user.name.charAt(0).toUpperCase()}
                 </div>
-
+                {/* <h5>{user.name}</h5> */}
                 <h5>{user.name}</h5>
-                <p className="text-muted mb-1">{user.email}</p>
-                <p>{user.number}</p>
-
+                <p className="mb-1">
+                  <strong>Organization:</strong> {user.organization}
+                </p>
+                <p className="text-muted mb-1">
+                  <strong>Email:</strong> {user.email}
+                </p>
+                <p className="mb-1">
+                  <strong>Phone:</strong> {user.number}
+                </p>
+                <p className="mb-1">
+                  <strong>Address:</strong> {user.street}, {user.city},{" "}
+                  {user.state}, {user.country} - {user.postalCode}
+                </p>
                 <span className={`badge ${getBadgeClass(user.details)} mb-3`}>
                   {user.details}
                 </span>
-
-                <button className="btn btn-outline-primary btn-sm w-100">
-                  View Profile
-                </button>
-
+                <span className={`badge ${getBadgeClass(user.details)} mb-3`}>
+                  {user.details}
+                </span>
+                <div className="d-flex gap-2">
+                   <button
+                    className="btn btn-outline-primary btn-sm w-50"
+                    // onClick={ }
+                  >
+                    View
+                  </button>
+                  <button
+                    className="btn btn-outline-primary btn-sm w-50"
+                    onClick={() => handleEdit(user)}
+                  >
+                    Edit
+                  </button>
+                </div>
               </div>
             </div>
           ))}
@@ -184,34 +257,226 @@ function Dashboard() {
                 <th>Action</th>
               </tr>
             </thead>
-
             <tbody>
               {filteredUsers.map((user, index) => (
                 <tr key={user.id}>
                   <td>{index + 1}</td>
                   <td>{user.name}</td>
+                  <td>{user.organization}</td>
                   <td>{user.email}</td>
                   <td>{user.number}</td>
-
-                  <td>
-                    <span className={`badge ${getBadgeClass(user.details)}`}>
-                      {user.details}
-                    </span>
-                  </td>
-
-                  <td>
-                    <button className="btn btn-sm btn-primary">
-                      View
+                  <td>{user.details}</td>
+                  <td>{user.country}</td>
+                  <td>{user.state}</td>
+                  <td>{user.city}</td>
+                  <td>{user.street}</td>
+                  <td>{user.postalCode}</td>
+                  <td className="d-flex gap-2">
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => handleEdit(user)}
+                    >
+                      Edit
+                    </button>
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleDelete(user.id)}
+                    >
+                      Delete
                     </button>
                   </td>
                 </tr>
               ))}
             </tbody>
-
           </table>
         </div>
       )}
 
+      {/* ADD/EDIT EMPLOYEE MODAL */}
+      {isModalOpen && (
+        <>
+          <div className="modal show d-block" tabIndex="-1">
+            <div className="modal-dialog modal-lg">
+              <div className="modal-content p-3">
+                <div className="modal-body">
+                  <div className="mb-3">
+                    <label className="form-label">Organization Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={newEmployee.organization || ""}
+                      onChange={(e) =>
+                        setNewEmployee({
+                          ...newEmployee,
+                          organization: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label">Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={newEmployee.name}
+                      onChange={(e) =>
+                        setNewEmployee({ ...newEmployee, name: e.target.value })
+                      }
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label">Email</label>
+                    <input
+                      type="email"
+                      className="form-control"
+                      value={newEmployee.email}
+                      onChange={(e) =>
+                        setNewEmployee({
+                          ...newEmployee,
+                          email: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label">Phone Number</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={newEmployee.number}
+                      onChange={(e) =>
+                        setNewEmployee({
+                          ...newEmployee,
+                          number: e.target.value,
+                        })
+                      }
+                    />
+                  </div>
+
+                  <div className="mb-3">
+                    <label className="form-label">Department</label>
+                    <select
+                      className="form-select"
+                      value={newEmployee.details}
+                      onChange={(e) =>
+                        setNewEmployee({
+                          ...newEmployee,
+                          details: e.target.value,
+                        })
+                      }
+                    >
+                      {departments
+                        .filter((d) => d !== "All")
+                        .map((d) => (
+                          <option key={d}>{d}</option>
+                        ))}
+                    </select>
+                  </div>
+
+                  {/* Address Information */}
+                  <h6 className="mt-4">Address Information</h6>
+                  <div className="row g-3">
+                    <div className="col-md-6">
+                      <label className="form-label">Country</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={newEmployee.country || ""}
+                        onChange={(e) =>
+                          setNewEmployee({
+                            ...newEmployee,
+                            country: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">State</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={newEmployee.state || ""}
+                        onChange={(e) =>
+                          setNewEmployee({
+                            ...newEmployee,
+                            state: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">City</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={newEmployee.city || ""}
+                        onChange={(e) =>
+                          setNewEmployee({
+                            ...newEmployee,
+                            city: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">Street Address</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={newEmployee.street || ""}
+                        onChange={(e) =>
+                          setNewEmployee({
+                            ...newEmployee,
+                            street: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label className="form-label">Postal Code</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        value={newEmployee.postalCode || ""}
+                        onChange={(e) =>
+                          setNewEmployee({
+                            ...newEmployee,
+                            postalCode: e.target.value,
+                          })
+                        }
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="modal-footer">
+                  <button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() => {
+                      setIsModalOpen(false);
+                      setEditUserId(null);
+                    }}
+                  >
+                    Close
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={handleSave}
+                  >
+                    {editUserId ? "Update" : "Save"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="modal-backdrop fade show"></div>
+        </>
+      )}
     </div>
   );
 }

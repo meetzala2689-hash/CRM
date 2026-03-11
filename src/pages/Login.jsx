@@ -56,13 +56,13 @@ const Login = () => {
     <div className="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
       <div
         className="card shadow-lg border-0 p-4"
-        style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", background: "linear-gradient(45deg, #000000ff, #c0cde0)" }}
+        style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", background: "linear-gradient(45deg, rgb(116, 181, 235), #c0cde0)" }}
 
       >
         {/* Logo */}
         <div className="text-center mb-4">
           <h2 className="fw-bold">
-            <span style={{ color: "#000000ff" }}>Kirit</span>
+            <span style={{ color: "rgb(255, 123, 0)" }}>Kirit</span>
             <span style={{ color: "#0d6efd" }}>Tech</span>
           </h2>
           <p className="text-muted small mb-0">
