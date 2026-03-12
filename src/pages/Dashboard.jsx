@@ -9,8 +9,10 @@ function Dashboard() {
   const [filterDept, setFilterDept] = useState("All");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editUserId, setEditUserId] = useState(null);
-
+  const [newEmployee, setNewEmployee] = useState(initialEmployeeState);
+  const departments = ["All", "IT", "HR", "Finance", "Marketing"];
   const navigate = useNavigate();
+
   const [users, setUsers] = useState(() => {
     const savedUsers = localStorage.getItem("users");
     return savedUsers ? JSON.parse(savedUsers) : [];
@@ -19,8 +21,6 @@ function Dashboard() {
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
-
-  const departments = ["All", "IT", "HR", "Finance", "Marketing"];
 
   const initialEmployeeState = {
     name: "",
@@ -34,8 +34,6 @@ function Dashboard() {
     street: "",
     postalCode: "",
   };
-
-  const [newEmployee, setNewEmployee] = useState(initialEmployeeState);
 
   useEffect(() => {
     const timer = setInterval(() => setDateTime(new Date()), 1000);
@@ -103,7 +101,7 @@ function Dashboard() {
   // };
 
   return (
-    <div className="container-fluid p-4">
+    <div className="container-fluid p-4 m-4">
       {/* Navbar */}
       <div className="d-flex justify-content-between align-items-center mb-4">
         <h2>Dashboard</h2>
@@ -200,7 +198,11 @@ function Dashboard() {
               {/* <div className="card h-100 shadow-sm border-0 p-3 transition hover-shadow-lg"> */}
               <div
                 className="card h-100 shadow-sm border-0 p-3"
-                style={{ transition: "all 0.3s ease", cursor: "pointer" }}
+                style={{
+                  transition: "all 0.3s ease",
+                  cursor: "pointer",
+                  backgroundColor: "#dbe1ff",
+                }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = "translateY(-6px)";
                   e.currentTarget.classList.remove("shadow-sm");

@@ -1,50 +1,59 @@
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userEmail");
-    navigate("/"); 
-  };
-
   return (
     <div
-      className="text-dark p-3 vh-100 d-flex flex-column bg-white shadow-sm border-end"
-      style={{ width: "250px" }}
+      className="bg-white border-end p-2"
+      style={{ width: "260px", minHeight: "100vh" }}
     >
-      <h4>CRM Admin</h4>
+      <div className="p-3 fw-bold fs-5 text-dark">Paces</div>
 
-      <ul className="list-unstyled mt-4 flex-grow-1">
-        <li className="mb-2">
-          <Link className="text-dark text-decoration-none" to="/dashboard">
-            Dashboard
-          </Link>
+      <ul className="nav flex-column px-2">
+
+        <li className="nav-item mb-2">
+          <Link className="nav-link text-dark" to="/pinnacle">Dashboard</Link>
         </li>
-        <li className="mb-2">
-          <Link className="text-dark text-decoration-none" to="/users">
-            Users
-          </Link>
+
+        <p className="text-muted small mt-3 fw-bold">SALES</p>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/leads">Leads</Link>
         </li>
-        <li className="mb-2">
-          <Link className="text-dark text-decoration-none" to="/products">
-            Products
-          </Link>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/opportunities">Opportunities</Link>
         </li>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/contacts">Contacts</Link>
+        </li>
+
+        <p className="text-muted small mt-3 fw-bold">PLANNING</p>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/tasks">Tasks</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/events">Events</Link>
+        </li>
+
+        <p className="text-muted small mt-3 fw-bold">PROPERTY</p>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/properties">Properties</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/areas">Areas</Link>
+        </li>
+
+        <li className="nav-item">
+          <Link className="nav-link text-dark" to="/units">Units</Link>
+        </li>
+
       </ul>
-
-      <button
-        className="btn w-100 mt-auto fw-semibold"
-        style={{
-           background: "linear-gradient(135deg, #fd0000, #f39898)",
-           border: "none",
-        }}
-        onClick={handleLogout}
-      >
-        Logout
-      </button>
     </div>
   );
 }

@@ -75,7 +75,7 @@ function Products() {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container mt-5 m-4">
       <h2 className="mb-4 text-primary">Our Products</h2>
       <div className="row g-4">
         {products.map((product) => (
