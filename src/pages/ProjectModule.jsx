@@ -106,9 +106,9 @@ function ProjectModule({ addProject }) {
   };
 
   return (
-    <div className="container mt-4 user-select-none">
+    <div className="container mt-4 user-select-none mb-3">
       <h4 className="mb-3">Add Project</h4>
-      
+
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <h5 className="bg-dark text-white p-2 rounded">Basic Details</h5>
