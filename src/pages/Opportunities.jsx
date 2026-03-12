@@ -1,14 +1,13 @@
-import React from 'react'
-import Sidebar from '../components/Sidebar'
-import Layout from '../components/Layout'
+import React from "react";
+import Sidebar from "../components/Sidebar";
+import Layout from "../components/Layout";
 
 function Opportunities() {
   return (
-    <Layout >
-        
+    <Layout>
       <h1>Opportunitise</h1>
     </Layout>
-  )
+  );
 }
 
-export default Opportunities
+export default Opportunities;

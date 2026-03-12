@@ -1,11 +1,11 @@
-import React from "react";
+// import React from "react";
 import { Link } from "react-router-dom";
 
 function Sidebar() {
   return (
     <div
       className="bg-white border-end p-2"
-      style={{ width: "260px", minHeight: "100vh" }}
+      style={{ width: "280px", minHeight: "100vh" }}
     >
       <div className="p-3 fw-bold fs-5 text-dark">Paces</div>
 
@@ -22,7 +22,7 @@ function Sidebar() {
         </li>
 
         <li className="nav-item">
-          <Link className="nav-link text-dark" to="/opportunities">Opportunities</Link>
+          <Link className="nav-link text-dark" to="/opprtunities">Opportunities</Link>
         </li>
 
         <li className="nav-item">

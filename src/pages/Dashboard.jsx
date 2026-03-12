@@ -3,6 +3,18 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
+   const initialEmployeeState = {
+    name: "",
+    organization: "",
+    email: "",
+    number: "",
+    details: "IT",
+    country: "",
+    state: "",
+    city: "",
+    street: "",
+    postalCode: "",
+  };
   const [dateTime, setDateTime] = useState(new Date());
   const [view, setView] = useState("grid");
   const [search, setSearch] = useState("");
@@ -22,18 +34,7 @@ function Dashboard() {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
 
-  const initialEmployeeState = {
-    name: "",
-    organization: "",
-    email: "",
-    number: "",
-    details: "IT",
-    country: "",
-    state: "",
-    city: "",
-    street: "",
-    postalCode: "",
-  };
+ 
 
   useEffect(() => {
     const timer = setInterval(() => setDateTime(new Date()), 1000);

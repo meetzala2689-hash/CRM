@@ -16,6 +16,13 @@ import ProjectModule from "./pages/ProjectModule";
 import Pinnacle from "./pages/Pinnacle";
 import Leads from "./pages/Leads";
 import Sidebar from "./components/Sidebar";
+import Opportunities from "./pages/Opportunities";
+import Contacts from "./pages/Contacts";
+import Events from "./pages/Events";
+import Properties from "./pages/Properties";
+import Areas from "./pages/Areas";
+import Units from "./pages/Units";
+import Tasks from "./pages/Tasks";
 
 function App() {
   const [projects, setProjects] = useState(() => {
@@ -57,6 +64,14 @@ function App() {
                       <Route path="products" element={<Products />} />
                       <Route path="/pinnacle" element={<Pinnacle />} />
                       <Route path="leads" element={<Leads />}/>
+                      <Route path="/opprtunities" element={<Opportunities />}/>
+                      <Route path="/contacts" element={<Contacts />} />
+                      <Route path="/tasks" element={<Tasks />} />
+                      <Route path="/events" element={<Events />} />
+                      <Route path="/properties" element={<Properties />} />
+                      <Route path="/areas"  element={<Areas />}/>
+                      <Route path="/units"  element={<Units />}/>
+
                       <Route
                         path="/project"
                         element={<Project projects={projects} />}
