@@ -1,6 +1,4 @@
-/* Makes all placeholders semi-transparent */
 .placeholder-opacity-50::placeholder {
-  opacity: 0.5 !important;  /* makes it semi-transparent */
-  color: #6c757d;           /* optional: Bootstrap gray */
+  opacity: 0.5 !important;
+  color: #6c757d;
 }
-

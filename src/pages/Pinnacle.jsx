@@ -12,8 +12,8 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler,
 } from "chart.js";
-
 // Register Chart.js elements
 ChartJS.register(
   CategoryScale,
@@ -24,7 +24,8 @@ ChartJS.register(
   ArcElement,
   Title,
   Tooltip,
-  Legend
+  Legend,
+  Filler
 );
 
 function Pinnacle() {
@@ -77,7 +78,7 @@ function Pinnacle() {
         label: "Revenue",
         data: [5000, 7000, 4000, 9000],
         // backgroundColor: "rgba(255, 99, 132, 0.7)",
-        backgroundColor: ["#FFCE56 ","#383837","#6beb30","#53f0fc"]
+        backgroundColor: ["#FFCE56 ", "#383837", "#6beb30", "#53f0fc"],
       },
     ],
   };
@@ -143,35 +144,35 @@ function Pinnacle() {
             "Leads Generated",
             <Bar key="leadsChart" data={leadsData} />,
             "leads",
-            ["John Doe", "Jane Smith", "Acme Corp"]
+            ["John Doe", "Jane Smith", "Acme Corp"],
           )}
 
           {renderCard(
             "Sales Distribution",
             <Pie key="salesChart" data={salesData} />,
             "sales",
-            ["Top Product: Product C", "Region: North America"]
+            ["Top Product: Product C", "Region: North America"],
           )}
 
           {renderCard(
             "Quarterly Revenue",
             <Doughnut key="revenueChart" data={revenueData} />,
             "revenue",
-            ["Q4 highest revenue", "Q1 lowest revenue"]
+            ["Q4 highest revenue", "Q1 lowest revenue"],
           )}
 
           {renderCard(
             "Weekly Growth",
             <Line key="growthChart" data={growthData} />,
             "growth",
-            ["Best week: Week 4", "Slow week: Week 3"]
+            ["Best week: Week 4", "Slow week: Week 3"],
           )}
 
           {renderCard(
             "Leads Type",
             <Pie key="leadsPieChart" data={leadsPieData} />,
             "leadsPie",
-            ["New: 60%", "Returning: 40%"]
+            ["New: 60%", "Returning: 40%"],
           )}
         </div>
       </div>
