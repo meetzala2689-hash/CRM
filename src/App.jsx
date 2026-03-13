@@ -15,7 +15,6 @@ import Project from "./pages/Project";
 import ProjectModule from "./pages/ProjectModule";
 import Pinnacle from "./pages/Pinnacle";
 import Leads from "./pages/Leads";
-import Sidebar from "./components/Sidebar";
 import Opportunities from "./pages/Opportunities";
 import Contacts from "./pages/Contacts";
 import Events from "./pages/Events";
@@ -23,6 +22,7 @@ import Properties from "./pages/Properties";
 import Areas from "./pages/Areas";
 import Units from "./pages/Units";
 import Tasks from "./pages/Tasks";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   const [projects, setProjects] = useState(() => {

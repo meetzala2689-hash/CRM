@@ -1,6 +1,8 @@
 // src/components/Layout.js
 import React from "react";
 import Sidebar from "./Sidebar";
+import "../assets/theme/assets/css/vendors.min.css";
+import "../assets/theme/assets/css/app.min.css";
 
 function Layout({ children }) {
   return (

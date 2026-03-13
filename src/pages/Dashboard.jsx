@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 
 function Dashboard() {
-   const initialEmployeeState = {
+  const initialEmployeeState = {
     name: "",
     organization: "",
     email: "",
@@ -33,8 +33,6 @@ function Dashboard() {
   useEffect(() => {
     localStorage.setItem("users", JSON.stringify(users));
   }, [users]);
-
- 
 
   useEffect(() => {
     const timer = setInterval(() => setDateTime(new Date()), 1000);
