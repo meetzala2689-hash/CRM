@@ -1,23 +1,795 @@
-import { Link } from "react-router-dom";
+import React from 'react'
 
-
-function Sidebar() {
-
-
+function Cart() {
   return (
-   <>
-   <div>
- <div
-  className="sidenav-menu sidebar bg-light vh-100 overflow-auto"
-  style={{
-    scrollbarWidth: "none",     
-    msOverflowStyle: "none",     
-    overflow: "auto",   
-    scrollBehavior: "smooth",  
-  }}
->
-   
-   {/* Logo */}
+    <div>
+        <div className="wrapper">
+            <header className="app-topbar">
+                <div className="container-fluid topbar-menu">
+                    <div className="d-flex align-items-center gap-2">
+                  
+                        <div className="logo-topbar">
+                        
+                            <a href="index.html" className="logo-light">
+                                <span className="logo-lg">
+                                    <img src="assets/images/logo.png" alt="logo" />
+                                </span>
+                                <span className="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="small logo" />
+                                </span>
+                            </a>
+
+                        
+                            <a href="index.html" className="logo-dark">
+                                <span className="logo-lg">
+                                    <img src="assets/images/logo-black.png" alt="dark logo" />
+                                </span>
+                                <span className="logo-sm">
+                                    <img src="assets/images/logo-sm.png" alt="small logo" />
+                                </span>
+                            </a>
+                        </div>
+
+                        <button className="sidenav-toggle-button btn btn-primary btn-icon">
+                            <i className="ti ti-menu-4"></i>
+                        </button>
+
+                        <button className="topnav-toggle-button px-2" data-bs-toggle="collapse" data-bs-target="#topnav-menu">
+                            <i className="ti ti-menu-4"></i>
+                        </button>
+
+                        <div id="search-box-rounded" className="app-search d-none d-xl-flex">
+                            <input type="search" className="form-control rounded-pill topbar-search" name="search" placeholder="Quick Search..." />
+                            <i className="ti ti-search app-search-icon text-muted"></i>
+                        </div>
+
+                        <div id="megamenu-columns" className="topbar-item d-none d-md-flex">
+                            <div className="dropdown">
+                                <button className="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    Mega Menu
+                                    <i className="ti ti-chevron-down ms-1"></i>
+                                </button>
+                                <div className="dropdown-menu dropdown-menu-xxl p-0">
+                                    <div className="h-100" style="max-height: 380px" data-simplebar="">
+                                        <div className="row g-0">
+                                            <div className="col-md-4">
+                                                <div className="p-2">
+                                                    <h5 className="mb-1 fw-semibold fs-sm dropdown-header">Dashboard &amp; Analytics</h5>
+                                                    <ul className="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Sales Dashboard
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Marketing Dashboard
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Finance Overview
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Analytics
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Traffic Insights
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-4">
+                                                <div className="p-2">
+                                                    <h5 className="mb-1 fw-semibold fs-sm dropdown-header">Project Management</h5>
+                                                    <ul className="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Kanban Workflow
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Project Timeline
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Task Management
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Team Members
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-minus align-middle me-1 text-muted"></i>
+                                                                Assignments
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-4">
+                                                <div className="p-2 bg-light bg-opacity-50">
+                                                    <h5 className="mb-1 fw-semibold fs-sm dropdown-header">User Management</h5>
+                                                    <ul className="list-unstyled megamenu-list">
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Profiles
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Access Control
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Security Settings
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                User Groups
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:void(0);" className="dropdown-item">
+                                                                <i className="ti ti-chevron-right align-middle me-1 text-muted"></i>
+                                                                Authentication
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="megamenu-apps" className="topbar-item d-none d-md-flex">
+                            <div className="dropdown">
+                                <button className="topbar-link btn fw-medium btn-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    Apps
+                                    <i className="ti ti-chevron-down ms-1"></i>
+                                </button>
+                                <div className="dropdown-menu dropdown-menu-xxl p-0">
+                                    <div className="h-100" style="max-height: 380px" data-simplebar="">
+                                        <div className="row g-0">
+                                            <div className="col-sm-8">
+                                                <div className="row g-0">
+                                                    <div className="col-sm-6">
+                                                        <div className="p-2">
+                                                            <a href="#!" className="dropdown-item">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-primary border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-basket fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">eCommerce</h5>
+                                                                        <span className="text-muted fs-12">Products, orders &amp; etc.</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item my-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-message fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Chat</h5>
+                                                                        <span className="text-muted fs-12">Team conversations</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item my-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-danger border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-list-check fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Task</h5>
+                                                                        <span className="text-muted fs-12">Plan and track work</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item mt-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-info border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-mailbox fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Email</h5>
+                                                                        <span className="text-muted fs-12">Messages and inbox</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="col-sm-6">
+                                                        <div className="p-2">
+                                                            <a href="#!" className="dropdown-item">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-secondary border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-building fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Companies</h5>
+                                                                        <span className="text-muted fs-12">Business profiles</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item my-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-dark border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-id fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Contacts Diary</h5>
+                                                                        <span className="text-muted fs-12">People and connections</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item my-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-warning border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-calendar fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Calendar</h5>
+                                                                        <span className="text-muted fs-12">Events and reminders</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+
+                                                            <a href="#!" className="dropdown-item mt-2">
+                                                                <span className="d-flex align-items-center">
+                                                                    <span className="avatar-md me-2">
+                                                                        <span className="avatar-title text-success border border-light bg-light bg-opacity-50 rounded">
+                                                                            <i className="ti ti-lifebuoy fs-22"></i>
+                                                                        </span>
+                                                                    </span>
+                                                                    <span>
+                                                                        <h5 className="fs-base mb-0 lh-base">Support</h5>
+                                                                        <span className="text-muted fs-12">Help and assistance</span>
+                                                                    </span>
+                                                                </span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className="row g-0 border-top border-light border-dashed text-center">
+                                                    <div className="col">
+                                                        <div className="p-3">
+                                                            <p className="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Support &nbsp;:-</p>
+                                                            <h5 className="fs-15 mb-0">help@mydomain.com</h5>
+                                                        </div>
+                                                    </div>
+                                                    <div className="col">
+                                                        <div className="p-3">
+                                                            <p className="fw-medium text-muted mb-2 fs-11 text-uppercase lh-1">-: &nbsp; Help: &nbsp;:-</p>
+                                                            <h5 className="fs-15 mb-0">+(12) 3456 7890</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className="col-sm-4">
+                                                <div className="h-100 position-relative rounded-end rounded-0 overflow-hidden" style="background: url(assets/images/stock/small-8.jpg); background-size: cover">
+                                                    <div className="p-3 card-img-overlay bg-gradient bg-secondary bg-opacity-90 d-flex align-items-center justify-content-center">
+                                                        <div className="text-center text-white">
+                                                            <i className="ti ti-atom fs-36"></i>
+
+                                                            <p className="text-white text-opacity-75 mb-3 text-uppercase">Limited Offer</p>
+
+                                                            <h3 className="fw-semibold text-white mb-2 fs-20">Unlock Exclusive Savings</h3>
+
+                                                            <h4 className="fw-medium fs-16 mb-1">
+                                                                <del className="text-white text-opacity-75">$49.00</del>
+                                                                /
+                                                                <span className="fw-bold text-white">$25 USD</span>
+                                                            </h4>
+
+                                                            <button type="button" className="btn btn-danger btn-sm mt-3">
+                                                                <i className="ti ti-shopping-cart me-1"></i>
+                                                                Grab Deal
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="d-flex align-items-center gap-2">
+                        <div id="theme-dropdown" className="topbar-item d-none d-sm-flex">
+                            <div className="dropdown">
+                                <button className="topbar-link" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    <i className="ti ti-sun topbar-link-icon d-none" id="theme-icon-light"></i>
+                                    <i className="ti ti-moon topbar-link-icon d-none" id="theme-icon-dark"></i>
+                                    <i className="ti ti-sun-moon topbar-link-icon d-none" id="theme-icon-system"></i>
+                                </button>
+                                <div className="dropdown-menu dropdown-menu-end" data-thememode="dropdown">
+                                    <label className="dropdown-item cursor-pointer">
+                                        <input className="form-check-input" type="radio" name="data-bs-theme" value="light" style="display: none" />
+                                        <i className="ti ti-sun align-middle me-1 fs-16"></i>
+                                        <span className="align-middle">Light</span>
+                                    </label>
+                                    <label className="dropdown-item cursor-pointer">
+                                        <input className="form-check-input" type="radio" name="data-bs-theme" value="dark" style="display: none" />
+                                        <i className="ti ti-moon align-middle me-1 fs-16"></i>
+                                        <span className="align-middle">Dark</span>
+                                    </label>
+                                    <label className="dropdown-item cursor-pointer">
+                                        <input className="form-check-input" type="radio" name="data-bs-theme" value="system" style="display: none" />
+                                        <i className="ti ti-sun-moon align-middle me-1 fs-16"></i>
+                                        <span className="align-middle">System</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="apps-dropdown-grid" className="topbar-item d-none d-xl-flex">
+                            <div className="dropdown">
+                                <button className="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                                    <i className="ti ti-apps topbar-link-icon"></i>
+                                </button>
+
+                                <div className="dropdown-menu dropdown-menu-lg p-2 dropdown-menu-end">
+                                    <div className="row align-items-center g-1">
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title text-bg-light rounded-circle">
+                                                        <img src="assets/images/logos/google.svg" alt="Google Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Google</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title text-bg-light rounded-circle">
+                                                        <img src="assets/images/logos/figma.svg" alt="Figma Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Figma</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title text-bg-light rounded-circle">
+                                                        <img src="assets/images/logos/slack.svg" alt="Slack Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Slack</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title text-bg-light rounded-circle">
+                                                        <img src="assets/images/logos/dropbox.svg" alt="Dropbox Logo" height="18" />
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Dropbox</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4 text-center">
+                                            <a href="javascript:void(0);" className="btn btn-sm rounded-circle btn-icon btn-danger">
+                                                <i className="ti ti-circle-dashed-plus fs-18"></i>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i className="ti ti-calendar fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Calendar</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i className="ti ti-message-circle fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Chat</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i className="ti ti-folder fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Files</span>
+                                            </a>
+                                        </div>
+
+                                        <div className="col-4">
+                                            <a href="javascript:void(0);" className="dropdown-item border border-dashed rounded text-center py-2">
+                                                <span className="avatar-sm d-block mx-auto mb-1">
+                                                    <span className="avatar-title bg-primary-subtle text-primary rounded-circle">
+                                                        <i className="ti ti-users fs-18"></i>
+                                                    </span>
+                                                </span>
+                                                <span className="align-middle fw-medium">Team</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="notification-dropdown-people" className="topbar-item">
+                            <div className="dropdown">
+                                <button className="topbar-link dropdown-toggle drop-arrow-none" data-bs-toggle="dropdown" type="button" data-bs-auto-close="outside" aria-haspopup="false" aria-expanded="false">
+                                    <i className="ti ti-bell topbar-link-icon animate-ring"></i>
+                                    <span className="badge text-bg-danger badge-circle topbar-badge">5</span>
+                                </button>
+
+                                <div className="dropdown-menu p-0 dropdown-menu-end dropdown-menu-lg">
+                                    <div className="px-3 py-2 border-bottom">
+                                        <div className="row align-items-center">
+                                            <div className="col">
+                                                <h6 className="m-0 fs-md fw-semibold">Notifications</h6>
+                                            </div>
+                                            <div className="col text-end">
+                                                <a href="#!" className="badge badge-soft-success badge-label py-1">07 Notifications</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div style="max-height: 300px" data-simplebar="">
+                                      
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-1">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <img src="assets/images/users/user-4.jpg" className="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span className="position-absolute rounded-pill bg-success notification-badge">
+                                                        <i className="ti ti-bell align-middle"></i>
+                                                        <span className="visually-hidden">unread notification</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Emily Johnson</span>
+                                                    commented on a task in
+                                                    <span className="fw-medium text-body">Design Sprint</span>
+                                                    <br />
+                                                    <span className="fs-xs">12 minutes ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-1">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-2">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <img src="assets/images/users/user-5.jpg" className="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span className="position-absolute rounded-pill bg-info notification-badge">
+                                                        <i className="ti ti-cloud-upload align-middle"></i>
+                                                        <span className="visually-hidden">upload notification</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Michael Lee</span>
+                                                    uploaded files to
+                                                    <span className="fw-medium text-body">Marketing Assets</span>
+                                                    <br />
+                                                    <span className="fs-xs">25 minutes ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-2">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-6">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <span className="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                                        <i className="ti ti-database fs-4"></i>
+                                                    </span>
+                                                    <span className="position-absolute rounded-pill bg-danger notification-badge">
+                                                        <i className="ti ti-alert-circle align-middle"></i>
+                                                        <span className="visually-hidden">server alert</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Server #3</span>
+                                                    CPU usage exceeded 90%
+                                                    <br />
+                                                    <span className="fs-xs">Just now</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-6">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-3">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <img src="assets/images/users/user-6.jpg" className="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span className="position-absolute rounded-pill bg-warning notification-badge">
+                                                        <i className="ti ti-alert-triangle align-middle"></i>
+                                                        <span className="visually-hidden">alert</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Sophia Ray</span>
+                                                    flagged an issue in
+                                                    <span className="fw-medium text-body">Bug Tracker</span>
+                                                    <br />
+                                                    <span className="fs-xs">40 minutes ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-3">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-4">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <img src="assets/images/users/user-7.jpg" className="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span className="position-absolute rounded-pill bg-primary notification-badge">
+                                                        <i className="ti ti-calendar-event align-middle"></i>
+                                                        <span className="visually-hidden">event notification</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">David Kim</span>
+                                                    scheduled a meeting for
+                                                    <span className="fw-medium text-body">UX Review</span>
+                                                    <br />
+                                                    <span className="fs-xs">1 hour ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-4">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-5">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <img src="assets/images/users/user-8.jpg" className="avatar-md rounded-circle" alt="User Avatar" />
+                                                    <span className="position-absolute rounded-pill bg-secondary notification-badge">
+                                                        <i className="ti ti-edit align-middle"></i>
+                                                        <span className="visually-hidden">edit</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Isabella White</span>
+                                                    updated the document in
+                                                    <span className="fw-medium text-body">Product Specs</span>
+                                                    <br />
+                                                    <span className="fs-xs">2 hours ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-5">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+
+                                        <div className="dropdown-item notification-item py-2 text-wrap" id="message-7">
+                                            <span className="d-flex align-items-center gap-3">
+                                                <span className="flex-shrink-0 position-relative">
+                                                    <span className="avatar-md rounded-circle bg-light d-flex align-items-center justify-content-center">
+                                                        <i className="ti ti-rocket fs-4"></i>
+                                                    </span>
+                                                    <span className="position-absolute rounded-pill bg-success notification-badge">
+                                                        <i className="ti ti-check align-middle"></i>
+                                                        <span className="visually-hidden">deployment</span>
+                                                    </span>
+                                                </span>
+                                                <span className="flex-grow-1 text-muted">
+                                                    <span className="fw-medium text-body">Production Server</span>
+                                                    deployment completed successfully
+                                                    <br />
+                                                    <span className="fs-xs">30 minutes ago</span>
+                                                </span>
+                                                <button type="button" className="flex-shrink-0 text-muted btn btn-link p-0 position-absolute end-0 me-2 d-none noti-close-btn" data-dismissible="#message-7">
+                                                    <i className="ti ti-square-rounded-x fs-xxl"></i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <a href="javascript:void(0);" className="dropdown-item text-center text-reset text-decoration-underline link-offset-2 fw-bold notify-item border-top border-light py-2">Read All Messages</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="fullscreen-toggler" className="topbar-item d-none d-md-flex">
+                            <button className="topbar-link" type="button" data-toggle="fullscreen">
+                                <i className="ti ti-maximize topbar-link-icon"></i>
+                                <i className="ti ti-minimize topbar-link-icon d-none"></i>
+                            </button>
+                        </div>
+
+                        <div id="monochrome-toggler" className="topbar-item d-none d-xl-flex">
+                            <button id="monochrome-mode" className="topbar-link" type="button" data-toggle="monochrome">
+                                <i className="ti ti-palette topbar-link-icon"></i>
+                            </button>
+                        </div>
+
+                        <div className="topbar-item d-none d-sm-flex">
+                            <button className="topbar-link btn-theme-setting" data-bs-toggle="offcanvas" data-bs-target="#theme-settings-offcanvas" type="button">
+                                <i className="ti ti-settings topbar-link-icon"></i>
+                            </button>
+                        </div>
+
+                        <div id="language-selector-rounded" className="topbar-item">
+                            <div className="dropdown">
+                                <button className="topbar-link fw-bold" data-bs-toggle="dropdown" type="button" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/flags/us.svg" alt="user-image" className="rounded-circle me-2" height="18" id="selected-language-image" />
+                                    <span id="selected-language-code">EN</span>
+                                </button>
+                                <div className="dropdown-menu dropdown-menu-end">
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="en" title="English">
+                                        <img src="assets/images/flags/us.svg" alt="English" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">English</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="de" title="German">
+                                        <img src="assets/images/flags/de.svg" alt="German" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">Deutsch</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="it" title="Italian">
+                                        <img src="assets/images/flags/it.svg" alt="Italian" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">Italiano</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="es" title="Spanish">
+                                        <img src="assets/images/flags/es.svg" alt="Spanish" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">Español</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="ru" title="Russian">
+                                        <img src="assets/images/flags/ru.svg" alt="Russian" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">Русский</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="hi" title="Hindi">
+                                        <img src="assets/images/flags/in.svg" alt="Hindi" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">हिन्दी</span>
+                                    </a>
+                                    <a href="javascript:void(0);" className="dropdown-item" data-translator-lang="ar" title="Arabic">
+                                        <img src="assets/images/flags/sa.svg" alt="Arabic" className="me-1 rounded-circle" height="18" data-translator-image="" />
+                                        <span className="align-middle">عربي</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="user-dropdown-detailed" className="topbar-item nav-user">
+                            <div className="dropdown">
+                                <a className="topbar-link dropdown-toggle drop-arrow-none px-2" data-bs-toggle="dropdown" href="#!" aria-haspopup="false" aria-expanded="false">
+                                    <img src="assets/images/users/user-1.jpg" width="32" className="rounded-circle me-lg-2 d-flex" alt="user-image" />
+                                    <div className="d-lg-flex align-items-center gap-1 d-none">
+                                        <span>
+                                            <h5 className="my-0 lh-1 pro-username">David Dev</h5>
+                                            <span className="fs-xs lh-1">Admin Head</span>
+                                        </span>
+                                        <i className="ti ti-chevron-down align-middle"></i>
+                                    </div>
+                                </a>
+                                <div className="dropdown-menu dropdown-menu-end">
+                    
+                                    <div className="dropdown-header noti-title">
+                                        <h6 className="text-overflow m-0">Welcome back 👋!</h6>
+                                    </div>
+
+                    
+                                    <a href="#!" className="dropdown-item">
+                                        <i className="ti ti-user-circle me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Profile</span>
+                                    </a>
+
+                                    
+                                    <a href="javascript:void(0);" className="dropdown-item">
+                                        <i className="ti ti-bell-ringing me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Notifications</span>
+                                    </a>
+
+                                
+                                    <a href="javascript:void(0);" className="dropdown-item">
+                                        <i className="ti ti-settings-2 me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Account Settings</span>
+                                    </a>
+
+            
+                                    <a href="javascript:void(0);" className="dropdown-item">
+                                        <i className="ti ti-headset me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Support Center</span>
+                                    </a>
+
+                        
+                                    <div className="dropdown-divider"></div>
+
+                        
+                                    <a href="auth-lock-screen.html" className="dropdown-item">
+                                        <i className="ti ti-lock me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Lock Screen</span>
+                                    </a>
+
+                
+                                    <a href="javascript:void(0);" className="dropdown-item fw-semibold">
+                                        <i className="ti ti-logout me-1 fs-lg align-middle"></i>
+                                        <span className="align-middle">Log Out</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        
+ <div className="sidenav-menu">
+
     <a href="index.html" className="logo">
         <span className="logo logo-light">
             <span className="logo-lg"><img src="assets/images/logo.png" alt="logo" /></span>
@@ -25,7 +797,7 @@ function Sidebar() {
         </span>
 
         <span className="logo logo-dark">
-            {/* <span className="logo-lg"><img src="assets/images/logo-black.png" alt="dark logo" /></span> */}
+            <span className="logo-lg"><img src="assets/images/logo-black.png" alt="dark logo" /></span>
             <span className="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo" /></span>
         </span>
     </a>
@@ -39,8 +811,7 @@ function Sidebar() {
     </button>
 
     <div className="scrollbar" data-simplebar="">
-
-        <div id="user-profile-settings" className="sidenav-user" style={{ background: "url(assets/images/user-bg-pattern.svg)" }}>
+        <div id="user-profile-settings" className="sidenav-user" style="background: url(assets/images/user-bg-pattern.svg)">
             <div className="d-flex justify-content-between align-items-center">
                 <div>
                     <a href="#!" className="link-reset">
@@ -55,26 +826,30 @@ function Sidebar() {
                     </a>
 
                     <div className="dropdown-menu">
-               
+                
                         <div className="dropdown-header noti-title">
                             <h6 className="text-overflow m-0">Welcome back!</h6>
                         </div>
 
+                    
                         <a href="#!" className="dropdown-item">
                             <i className="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span className="align-middle">Profile</span>
                         </a>
 
+                    
                         <a href="javascript:void(0);" className="dropdown-item">
                             <i className="ti ti-settings-2 me-1 fs-lg align-middle"></i>
                             <span className="align-middle">Account Settings</span>
                         </a>
 
+    
                         <a href="auth-lock-screen.html" className="dropdown-item">
                             <i className="ti ti-lock me-1 fs-lg align-middle"></i>
                             <span className="align-middle">Lock Screen</span>
                         </a>
 
+                    
                         <a href="javascript:void(0);" className="dropdown-item text-danger fw-semibold">
                             <i className="ti ti-logout me-1 fs-lg align-middle"></i>
                             <span className="align-middle">Log Out</span>
@@ -84,11 +859,10 @@ function Sidebar() {
             </div>
         </div>
 
+        
         <div id="sidenav-menu">
             <ul className="side-nav">
                 <li className="side-nav-title mt-2" data-lang="main">Main</li>
-
-                {/* Dashboard */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#dashboards" aria-expanded="false" aria-controls="dashboards" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-dashboard"></i></span>
@@ -103,9 +877,9 @@ function Sidebar() {
                                 </a>
                             </li>
                             <li className="side-nav-item">
-                                <Link to="/dashboard-analytics.html" className="side-nav-link">
+                                <a href="dashboard-analytics.html" className="side-nav-link">
                                     <span className="menu-text" data-lang="dashboard-analytics">Analytics</span>
-                                </Link>
+                                </a>
                             </li>
                             <li className="side-nav-item">
                                 <a href="dashboard-crm.html" className="side-nav-link">
@@ -125,11 +899,7 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Apps */}
                 <li className="side-nav-title mt-2" data-lang="apps">Apps</li>
-
-                {/* Ecommerce */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#ecommerce" aria-expanded="false" aria-controls="ecommerce" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-basket"></i></span>
@@ -301,16 +1071,12 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* chat */}
                 <li className="side-nav-item">
                     <a href="apps-chat.html" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-message"></i></span>
                         <span className="menu-text" data-lang="apps-chat">Chat</span>
                     </a>
                 </li>
-
-                {/* Project */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#projects" aria-expanded="false" aria-controls="projects" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-briefcase"></i></span>
@@ -352,8 +1118,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Tasks */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#tasks" aria-expanded="false" aria-controls="tasks" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-list-check"></i></span>
@@ -380,8 +1144,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Invoice */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#invoice" aria-expanded="false" aria-controls="invoice" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-invoice"></i></span>
@@ -408,8 +1170,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* CRM */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#crm" aria-expanded="false" aria-controls="crm" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-heart-handshake"></i></span>
@@ -471,8 +1231,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Users */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#users" aria-expanded="false" aria-controls="users" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-users"></i></span>
@@ -514,8 +1272,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Finance */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#finance" aria-expanded="false" aria-controls="finance" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-wallet"></i></span>
@@ -562,8 +1318,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* HRM */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#hrm" aria-expanded="false" aria-controls="hrm" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-accessible"></i></span>
@@ -645,8 +1399,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Email */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#email" aria-expanded="false" aria-controls="email" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-mailbox"></i></span>
@@ -673,8 +1425,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Support Center */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#support-center" aria-expanded="false" aria-controls="support-center" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-headset"></i></span>
@@ -701,8 +1451,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Promo */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#promo" aria-expanded="false" aria-controls="promo" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-discount"></i></span>
@@ -729,8 +1477,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* More Apps */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#more-apps" aria-expanded="false" aria-controls="more-apps" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-apps"></i></span>
@@ -857,11 +1603,7 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Custom Pages */}
                 <li className="side-nav-title mt-2" data-lang="custom-pages">Custom Pages</li>
-
-                {/* Pages */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#pages" aria-expanded="false" aria-controls="pages" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-files"></i></span>
@@ -933,8 +1675,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Plugins */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#plugins" aria-expanded="false" aria-controls="plugins" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-cpu"></i></span>
@@ -1006,8 +1746,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Authentication */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#authentication" aria-expanded="false" aria-controls="authentication" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-password-user"></i></span>
@@ -1184,8 +1922,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Error */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#error-pages" aria-expanded="false" aria-controls="error-pages" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-alert-triangle"></i></span>
@@ -1232,11 +1968,7 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Layout  */}
                 <li className="side-nav-title mt-2" data-lang="layouts">Layouts</li>
-
-                    {/* Layout Options */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#layout-options" aria-expanded="false" aria-controls="layout-options" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-layout"></i></span>
@@ -1273,8 +2005,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Sidebars */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#sidebars" aria-expanded="false" aria-controls="sidebars" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-layout-sidebar-inactive"></i></span>
@@ -1331,8 +2061,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Topbar */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#topbar" aria-expanded="false" aria-controls="topbar" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-layout-bottombar"></i></span>
@@ -1359,11 +2087,7 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Components */}
                 <li className="side-nav-title mt-2" data-lang="components">Components</li>
-
-                {/* Base UI */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#base-ui" aria-expanded="false" aria-controls="base-ui" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-components"></i></span>
@@ -1515,8 +2239,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Widgets */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#widgets" aria-expanded="false" aria-controls="widgets" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-category"></i></span>
@@ -1553,8 +2275,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Charts */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-chart-donut"></i></span>
@@ -1771,8 +2491,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Forms */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#forms" aria-expanded="false" aria-controls="forms" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-clipboard-list"></i></span>
@@ -1839,8 +2557,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Tables */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-table-column"></i></span>
@@ -1947,8 +2663,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Icons */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-icons"></i></span>
@@ -1985,8 +2699,6 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Maps */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#maps" aria-expanded="false" aria-controls="maps" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-map"></i></span>
@@ -2013,11 +2725,7 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Menu Items */}
                 <li className="side-nav-title mt-2" data-lang="menu-items">Menu Items</li>
-
-                {/* Menu Levels */}
                 <li className="side-nav-item">
                     <a data-bs-toggle="collapse" href="#menu-levels" aria-expanded="false" aria-controls="menu-levels" className="side-nav-link">
                         <span className="menu-icon"><i className="ti ti-sitemap"></i></span>
@@ -2084,16 +2792,12 @@ function Sidebar() {
                         </ul>
                     </div>
                 </li>
-
-                {/* Disable Menu */}
                 <li className="side-nav-item">
                     <a href="#" className="side-nav-link disabled">
                         <span className="menu-icon"><i className="ti ti-ban"></i></span>
                         <span className="menu-text" data-lang="disabled-menu">Disabled Menu</span>
                     </a>
                 </li>
-
-                {/* Special Menu */}
                 <li className="side-nav-item">
                     <a href="#" className="side-nav-link special-menu">
                         <span className="menu-icon"><i className="ti ti-star"></i></span>
@@ -2104,10 +2808,793 @@ function Sidebar() {
         </div>
     </div>
 </div>
+            <div className="content-page">
+                <div className="container-fluid">
+                    <div className="page-title-head d-flex align-items-center">
+                        <div className="flex-grow-1">
+                            <h4 className="page-main-title m-0">Cart</h4>
+                        </div>
 
-</div>
-   </>
-  );
+                        <div className="text-end">
+                            <ol className="breadcrumb m-0 py-0">
+                                <li className="breadcrumb-item"><a href="javascript: void(0);">Paces</a></li>
+                                <li className="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
+                                <li className="breadcrumb-item active">Cart</li>
+                            </ol>
+                        </div>
+                    </div>
+
+
+                    <div className="row">
+                        <div className="col-12">
+                            <div className="alert alert-info border border-info border-opacity-25">
+                                <h6 className="mb-2">Buy <span className="fw-bold text-warning">$250</span> more to get <span className="fw-semibold">Free Shipping</span></h6>
+                                <div className="progress" style="height: 4px">
+                                    <div className="progress-bar bg-warning" style="width: 70%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-lg-8">
+                            <div className="card">
+                                <div className="card-header">
+                                    <h4 className="card-title flex-grow-1">Shopping Cart</h4>
+                                    <a href="#" className="text-decoration-underline link-offset-2 fw-medium">Clear cart</a>
+                                </div>
+
+                                <div className="card-body">
+
+                                    <div className="table-responsive">
+                                        <table className="table table-custom align-middle mb-0">
+                                            <thead className="bg-light align-middle bg-opacity-25 thead-sm">
+                                                <tr className="text-uppercase fs-xxs">
+                                                    <th>Product</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Total</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td className="d-flex align-items-center">
+                                                        <img src="assets/images/products/1.png" className="me-3 rounded" width="60" alt="iPhone" />
+                                                        <div>
+                                                            <h6 className="mb-1 fs-sm">Apple iPhone 14 128GB</h6>
+                                                            <small className="text-muted d-block">Color: White</small>
+                                                            <small className="text-muted d-block">Model: 128GB</small>
+                                                        </div>
+                                                    </td>
+                                                    <td>$899.00</td>
+                                                    <td>
+                                                        <div className="input-group" data-touchspin style="max-width: 130px">
+                                                            <button type="button" className="btn btn-primary floating" data-minus>
+                                                                <i className="ti ti-minus"></i>
+                                                            </button>
+                                                            <input type="number" className="form-control form-control-sm border-0" value="1" max="800000" />
+                                                            <button type="button" className="btn btn-primary floating" data-plus>
+                                                                <i className="ti ti-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td className="fw-semibold">$899.00</td>
+                                                    <td>
+                                                        <a href="#" className="text-muted"><i className="ti ti-x fs-lg"></i></a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td className="d-flex align-items-center">
+                                                        <img src="assets/images/products/2.png" className="me-3 rounded" width="60" alt="iPad" />
+                                                        <div>
+                                                            <span className="badge bg-danger-subtle text-danger mb-1">-10%</span>
+                                                            <h6 className="mb-1 fs-sm">Tablet Apple iPad Pro M2</h6>
+                                                            <small className="text-muted d-block">Color: Black</small>
+                                                            <small className="text-muted d-block">Model: 256GB</small>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span className="fw-semibold">$989.00</span><br />
+                                                        <small className="text-decoration-line-through text-muted">$1,099.00</small>
+                                                    </td>
+                                                    <td>
+                                                        <div className="input-group" data-touchspin style="max-width: 130px">
+                                                            <button type="button" className="btn btn-primary floating" data-minus>
+                                                                <i className="ti ti-minus"></i>
+                                                            </button>
+                                                            <input type="number" className="form-control form-control-sm border-0" value="3" max="800000" />
+                                                            <button type="button" className="btn btn-primary floating" data-plus>
+                                                                <i className="ti ti-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td className="fw-semibold">$989.00</td>
+                                                    <td>
+                                                        <a href="#" className="text-muted"><i className="ti ti-x fs-lg"></i></a>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td className="d-flex align-items-center">
+                                                        <img src="assets/images/products/3.png" className="me-3 rounded" width="60" alt="Watch" />
+                                                        <div>
+                                                            <h6 className="mb-1 fs-sm">Smart Watch Series 7</h6>
+                                                            <small className="text-muted d-block">Color: White</small>
+                                                            <small className="text-muted d-block">Model: 44mm</small>
+                                                        </div>
+                                                    </td>
+                                                    <td>$429.00</td>
+                                                    <td>
+                                                        <div className="input-group" data-touchspin style="max-width: 130px">
+                                                            <button type="button" className="btn btn-primary floating" data-minus>
+                                                                <i className="ti ti-minus"></i>
+                                                            </button>
+                                                            <input type="number" className="form-control form-control-sm border-0" value="2" max="800000" />
+                                                            <button type="button" className="btn btn-primary floating" data-plus>
+                                                                <i className="ti ti-plus"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                    <td className="fw-semibold">$429.00</td>
+                                                    <td>
+                                                        <a href="#" className="text-muted"><i className="ti ti-x fs-lg"></i></a>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div className="mt-4">
+                                        <a href="apps-ecommerce-products-grid.html" className="fw-medium d-inline-flex align-items-center gap-1"> <i className="ti ti-arrow-left"></i> Continue Shopping </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4">
+                            <div className="card">
+                                <div className="card-header">
+                                    <h4 className="card-title">Order Summary</h4>
+                                </div>
+                                <div className="card-body">
+                                    <ul className="list-unstyled mb-3">
+                                        <li className="d-flex justify-content-between mb-2">
+                                            <span className="text-muted">Subtotal (3 items):</span>
+                                            <span>$2,427.00</span>
+                                        </li>
+                                        <li className="d-flex justify-content-between mb-2">
+                                            <span className="text-muted">Saving:</span>
+                                            <span className="text-danger">- $110.00</span>
+                                        </li>
+                                        <li className="d-flex justify-content-between mb-2">
+                                            <span className="text-muted">Tax collected:</span>
+                                            <span>$73.40</span>
+                                        </li>
+                                        <li className="d-flex justify-content-between border-bottom pb-3 mb-3">
+                                            <span className="text-muted">Shipping:</span>
+                                            <span>Calculated at checkout</span>
+                                        </li>
+                                        <li className="d-flex justify-content-between">
+                                            <h6 className="text-uppercase text-muted">Estimated total:</h6>
+                                            <h5 className="fw-bold">$2,390.40</h5>
+                                        </li>
+                                    </ul>
+
+                                    <a href="apps-ecommerce-checkout.html" className="btn btn-lg btn-danger w-100 mb-3"> Proceed to Checkout </a>
+                                    <p className="text-muted text-center mb-0"><a href="#" className="fw-semibold">Create an account</a> and get 239 bonuses</p>
+                                </div>
+                            </div>
+
+                            <div className="card">
+                                <div className="card-header">
+                                    <h4 className="card-title">Apply Coupon Code</h4>
+                                </div>
+                                <div className="card-body">
+                                    <div className="alert alert-warning fs-xs py-2">Use <span className="fw-bold">ADMINPRO</span> to get 10% off.</div>
+                                    <div className="input-group">
+                                        <input type="text" className="form-control" placeholder="Enter code" />
+                                        <button className="btn btn-primary" type="button">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer className="footer">
+                    <div className="container-fluid">
+                        <div className="row">
+                            <div className="col-md-6 text-center text-md-start">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>
+                                © Paces - By <span className="fw-bold text-decoration-underline text-uppercase text-reset fs-12">Coderthemes</span>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="d-none d-md-flex justify-content-end gap-3">
+                                    <a href="javascript: void(0);" className="link-reset">About</a>
+                                    <a href="javascript: void(0);" className="link-reset">Support</a>
+                                    <a href="javascript: void(0);" className="link-reset">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+
+            </div>
+
+        </div>
+
+        <div className="offcanvas offcanvas-end overflow-hidden" tabindex="-1" id="theme-settings-offcanvas">
+            <div className="d-flex justify-content-between text-bg-primary gap-2 p-3" style="background-image: url(assets/images/settings-bg.png)">
+                <div>
+                    <h5 className="mb-1 fw-bold text-white text-uppercase">Admin Customizer</h5>
+                    <p className="text-white text-opacity-75 fst-italic fw-medium mb-0">Easily configure layout, styles, and preferences for your admin interface.</p>
+                </div>
+
+                <div className="flex-grow-0">
+                    <button type="button" className="d-block btn btn-sm bg-white bg-opacity-25 text-white rounded-circle btn-icon" data-bs-dismiss="offcanvas">
+                        <i className="ti ti-x fs-lg"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div className="offcanvas-body theme-customizer-bar p-0 h-100" data-simplebar="">
+                <div id="skin" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Select Theme</h5>
+                    <div className="row g-3">
+                        <div className="col-6" id="skin-default">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-default" value="default" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-default">
+                                    <img src="assets/images/layouts/skin-default.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Default</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-minimal">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-minimal" value="minimal" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-minimal">
+                                    <img src="assets/images/layouts/skin-minimal.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Minimal</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-modern">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-modern" value="modern" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-modern">
+                                    <img src="assets/images/layouts/skin-modern.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Modern</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-material">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-material" value="material" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-material">
+                                    <img src="assets/images/layouts/skin-material.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Material</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-saas">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-saas" value="saas" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-saas">
+                                    <img src="assets/images/layouts/skin-saas.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">SaaS</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-flat">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-flat" value="flat" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-flat">
+                                    <img src="assets/images/layouts/skin-flat.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Flat</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-galaxy">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-galaxy" value="galaxy" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-galaxy">
+                                    <img src="assets/images/layouts/skin-galaxy.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Galaxy</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-luxe">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-luxe" value="luxe" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-luxe">
+                                    <img src="assets/images/layouts/skin-luxe.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Luxe</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-retro">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-retro" value="retro" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-retro">
+                                    <img src="assets/images/layouts/skin-retro.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Retro</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-neon">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-neon" value="neon" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-neon">
+                                    <img src="assets/images/layouts/skin-neon.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Neon</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-pixel">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-pixel" value="pixel" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-pixel">
+                                    <img src="assets/images/layouts/skin-pixel.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Pixel</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-soft">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-soft" value="soft" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-soft">
+                                    <img src="assets/images/layouts/skin-soft.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Soft</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-mono">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-mono" value="mono" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-mono">
+                                    <img src="assets/images/layouts/skin-mono.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Mono</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-prism">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-prism" value="prism" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-prism">
+                                    <img src="assets/images/layouts/skin-prism.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Prism</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-nova">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-nova" value="nova" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-nova">
+                                    <img src="assets/images/layouts/skin-nova.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Nova</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-zen">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-zen" value="zen" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-zen">
+                                    <img src="assets/images/layouts/skin-zen.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Zen</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-elegant">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-elegant" value="elegant" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-elegant">
+                                    <img src="assets/images/layouts/skin-elegant.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Elegant</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-vivid">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-vivid" value="vivid" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-vivid">
+                                    <img src="assets/images/layouts/skin-vivid.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Vivid</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-aurora">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-aurora" value="aurora" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-aurora">
+                                    <img src="assets/images/layouts/skin-aurora.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Aurora</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-crystal">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-crystal" value="crystal" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-crystal">
+                                    <img src="assets/images/layouts/skin-crystal.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Crystal</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-matrix">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-matrix" value="matrix" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-matrix">
+                                    <img src="assets/images/layouts/skin-matrix.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Matrix</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-orbit">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-orbit" value="orbit" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-orbit">
+                                    <img src="assets/images/layouts/skin-orbit.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Orbit</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-neo">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-neo" value="neo" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-neo">
+                                    <img src="assets/images/layouts/skin-neo.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Neo</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-silver">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-silver" value="silver" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-silver">
+                                    <img src="assets/images/layouts/skin-silver.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Silver</h5>
+                        </div>
+
+                        <div className="col-6" id="skin-xenon">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-skin" id="demo-skin-xenon" value="xenon" />
+                                <label className="form-check-label p-0 w-100" for="demo-skin-xenon">
+                                    <img src="assets/images/layouts/skin-xenon.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Xenon</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="theme" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Color Scheme</h5>
+                    <div className="row">
+                        <div className="col-4" id="theme-light">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-bs-theme" id="layout-color-light" value="light" />
+                                <label className="form-check-label p-0 w-100" for="layout-color-light">
+                                    <img src="assets/images/layouts/theme-light.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div className="col-4" id="theme-dark">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-bs-theme" id="layout-color-dark" value="dark" />
+                                <label className="form-check-label p-0 w-100" for="layout-color-dark">
+                                    <img src="assets/images/layouts/theme-dark.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div className="col-4" id="theme-system">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-bs-theme" id="layout-color-system" value="system" />
+                                <label className="form-check-label p-0 w-100" for="layout-color-system">
+                                    <img src="assets/images/layouts/theme-system.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">System</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="topbar-color" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Topbar Color</h5>
+
+                    <div className="row g-3">
+                        <div className="col-4" id="topbar-color-light">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-light" value="light" />
+                                <label className="form-check-label p-0 w-100" for="layout-topbar-color-light">
+                                    <img src="assets/images/layouts/topbar-color-light.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div className="col-4" id="topbar-color-dark">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-dark" value="dark" />
+                                <label className="form-check-label p-0 w-100" for="layout-topbar-color-dark">
+                                    <img src="assets/images/layouts/topbar-color-dark.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div className="col-4" id="topbar-color-gray">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-gray" value="gray" />
+                                <label className="form-check-label p-0 w-100" for="layout-topbar-color-gray">
+                                    <img src="assets/images/layouts/topbar-color-gray.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                        </div>
+
+                        <div className="col-4" id="topbar-color-gradient">
+                            <div className="form-check card-radio">
+                                <input className="form-check-input" type="radio" name="data-topbar-color" id="layout-topbar-color-gradient" value="gradient" />
+                                <label className="form-check-label p-0 w-100" for="layout-topbar-color-gradient">
+                                    <img src="assets/images/layouts/topbar-color-gradient.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-color" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Sidenav Color</h5>
+
+                    <div className="row g-3">
+                        <div className="col-4" id="sidenav-color-light">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-light" value="light" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-color-light">
+                                    <img src="assets/images/layouts/sidenav-color-light.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Light</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-color-dark">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-dark" value="dark" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-color-dark">
+                                    <img src="assets/images/layouts/sidenav-color-dark.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Dark</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-color-gray">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-gray" value="gray" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-color-gray">
+                                    <img src="assets/images/layouts/sidenav-color-gray.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Gray</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-color-gradient">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-gradient" value="gradient" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-color-gradient">
+                                    <img src="assets/images/layouts/sidenav-color-gradient.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Gradient</h5>
+                        </div>
+                        <div className="col-4" id="sidenav-color-image">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-menu-color" id="layout-sidenav-color-image" value="image" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-color-image">
+                                    <img src="assets/images/layouts/sidenav-color-image.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="fs-sm text-center text-muted mt-2 mb-0">Image</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-size" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Sidebar Size</h5>
+
+                    <div className="row g-3">
+                        <div className="col-4" id="sidenav-size-default">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-default" value="default" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-default">
+                                    <img src="assets/images/layouts/sidenav-size-default.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Default</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-size-compact">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-compact" value="compact" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-compact">
+                                    <img src="assets/images/layouts/sidenav-size-compact.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Compact</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-size-condensed">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-condensed" value="condensed" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-condensed">
+                                    <img src="assets/images/layouts/sidenav-size-condensed.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Condensed</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-size-on-hover">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-small-hover" value="on-hover" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-small-hover">
+                                    <img src="assets/images/layouts/sidenav-size-on-hover.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">On Hover</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-size-on-hover-active">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-small-hover-active" value="on-hover-active" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-small-hover-active">
+                                    <img src="assets/images/layouts/sidenav-size-on-hover-active.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 fs-base text-center text-muted mt-2">On Hover - Show</h5>
+                        </div>
+
+                        <div className="col-4" id="sidenav-size-offcanvas">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-sidenav-size" id="layout-sidenav-size-offcanvas" value="offcanvas" />
+                                <label className="form-check-label p-0 w-100" for="layout-sidenav-size-offcanvas">
+                                    <img src="assets/images/layouts/sidenav-size-offcanvas.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Offcanvas</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="width" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Layout Width</h5>
+
+                    <div className="row g-3">
+                        <div className="col-4" id="width-fluid">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-layout-width" id="layout-width-fluid" value="fluid" />
+                                <label className="form-check-label p-0 w-100" for="layout-width-fluid">
+                                    <img src="assets/images/layouts/width-fluid.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Fluid</h5>
+                        </div>
+
+                        <div className="col-4" id="width-boxed">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="data-layout-width" id="layout-width-boxed" value="boxed" />
+                                <label className="form-check-label p-0 w-100" for="layout-width-boxed">
+                                    <img src="assets/images/layouts/width-boxed.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">Boxed</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="dir" className="p-3 border-bottom border-dashed">
+                    <h5 className="mb-3 fw-bold">Layout Direction</h5>
+
+                    <div className="row g-3">
+                        <div className="col-4" id="dir-ltr">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="dir" id="layout-dir-ltr" value="ltr" />
+                                <label className="form-check-label p-0 w-100" for="layout-dir-ltr">
+                                    <img src="assets/images/layouts/dir-ltr.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">LTR</h5>
+                        </div>
+
+                        <div className="col-4" id="dir-rtl">
+                            <div className="form-check sidebar-setting card-radio">
+                                <input className="form-check-input" type="radio" name="dir" id="layout-dir-rtl" value="rtl" />
+                                <label className="form-check-label p-0 w-100" for="layout-dir-rtl">
+                                    <img src="assets/images/layouts/dir-rtl.png" alt="layout-img" className="img-fluid" />
+                                </label>
+                            </div>
+                            <h5 className="mb-0 text-center text-muted mt-2">RTL</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="position" className="p-3 border-bottom border-dashed">
+                    <div className="d-flex justify-content-between align-items-center">
+                        <h5 className="fw-bold mb-0">Layout Position</h5>
+
+                        <div className="d-flex gap-1">
+                            <div id="position-fixed">
+                                <input type="radio" className="btn-check" name="data-layout-position" id="layout-position-fixed" value="fixed" />
+                                <label className="btn btn-sm btn-soft-warning w-sm" for="layout-position-fixed">Fixed</label>
+                            </div>
+                            <div id="position-scrollable">
+                                <input type="radio" className="btn-check" name="data-layout-position" id="layout-position-scrollable" value="scrollable" />
+                                <label className="btn btn-sm btn-soft-warning w-sm ms-0" for="layout-position-scrollable">Scrollable</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sidenav-user" className="p-3">
+                    <div className="d-flex justify-content-between align-items-center">
+                        <h5 className="mb-0">
+                            <label className="fw-bold m-0" for="sidebaruser-check">Sidebar User Info</label>
+                        </h5>
+                        <div className="form-check form-switch fs-lg">
+                            <input type="checkbox" className="form-check-input" name="sidebar-user" id="sidebaruser-check" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="offcanvas-footer border-top p-3 text-center">
+                <div className="row justify-content-end">
+                    <div className="col-6">
+                        <a href="#" className="btn btn-success fw-semibold py-2 w-100" target="_blank"><i className="ti ti-basket me-2 fs-md"></i> Buy Now</a>
+                    </div>
+                    <div className="col-6">
+                        <button type="button" className="btn btn-danger fw-semibold py-2 w-100" id="reset-layout"><i className="ti ti-refresh me-2 fs-md"></i> Reset</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script src="assets/js/vendors.min.js"></script>
+
+<script src="assets/js/app.js"></script>
+    </div>
+  )
 }
 
-export default Sidebar;
+export default Cart

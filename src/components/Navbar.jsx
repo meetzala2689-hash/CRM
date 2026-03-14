@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const Navbar = () => {
   return (
     <>
-      <nav>
+      <nav >
         <header className="app-topbar">
           {/* <div className="container-fluid topbar-menu"> */}
           <div className="container-fluid topbar-menu d-flex justify-content-between align-items-center flex-wrap">

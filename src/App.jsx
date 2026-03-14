@@ -15,16 +15,20 @@ import "./App.css";
 import Project from "./pages/Project";
 import ProjectModule from "./pages/ProjectModule";
 import Pinnacle from "./pages/Pinnacle";
-import Leads from "./pages/Leads";
-import Opportunities from "./pages/Opportunities";
-import Contacts from "./pages/Contacts";
-import Events from "./pages/Events";
-import Properties from "./pages/Properties";
-import Areas from "./pages/Areas";
-import Units from "./pages/Units";
-import Tasks from "./pages/Tasks";
-import Sidebar from "./components/Sidebar";
-
+// import Leads from "./pages/Leads";
+// import Opportunities from "./pages/Opportunities";
+// import Contacts from "./pages/Contacts";
+// import Events from "./pages/Events";
+// import Properties from "./pages/Properties";
+// import Areas from "./pages/Areas";
+// import Units from "./pages/Units";
+// import Tasks from "./pages/Tasks";
+// import Sidebar from "./components/Sidebar";
+import Analytics from "./pages/Dashboard/Analytics";
+import Finance from "./pages/Dashboard/Finance";
+import Projects from "./pages/Dashboard/Projects";
+import CRM from "./pages/Dashboard/CRM";
+import Cart from "./pages/Ecommerce/Cart";
 function App() {
   const [projects, setProjects] = useState(() => {
     const saved = localStorage.getItem("projects");
@@ -51,7 +55,7 @@ function App() {
               <div className="d-flex">
                 <div className="flex-grow-1">
                   <Navbar />
-                  <div className="">
+                  <div>
                     <Routes>
                       <Route
                         path="/dashboard"
@@ -60,19 +64,26 @@ function App() {
                             <Dashboard />
                           </PrivateRoute>
                         }
-                      />
+                       />
                       <Route path="users" element={<Users />} />
                       <Route path="products" element={<Products />} />
                       <Route path="/pinnacle" element={<Pinnacle />} />
-                      <Route path="leads" element={<Leads />}/>
-                      <Route path="/opprtunities" element={<Opportunities />}/>
-                      <Route path="/contacts" element={<Contacts />} />
-                      <Route path="/tasks" element={<Tasks />} />
-                      <Route path="/events" element={<Events />} />
-                      <Route path="/properties" element={<Properties />} />
-                      <Route path="/areas"  element={<Areas />}/>
-                      <Route path="/units"  element={<Units />}/>
-
+                      {/* <Route path="leads" element={<Leads />}/> */}
+                      {/* <Route path="/opprtunities" element={<Opportunities />}/> */}
+                      {/* <Route path="/contacts" element={<Contacts />} /> */}
+                      {/* <Route path="/tasks" element={<Tasks />} /> */}
+                      {/* <Route path="/events" element={<Events />} /> */}
+                      {/* <Route path="/properties" element={<Properties />} /> */}
+                      {/* <Route path="/areas"  element={<Areas />}/> */}
+                      {/* <Route path="/units"  element={<Units />}/> */}
+                      <Route path="/finance" element={<Finance />} />
+                      <Route path="/crm" element={<CRM />} />
+                      <Route path="/projects2" element={<Projects />} />
+                      <Route path="/cart" element={<Cart />} />
+                      <Route
+                        path="/dashboard-analytics.html"
+                        element={<Analytics />}
+                      />
                       <Route
                         path="/project"
                         element={<Project projects={projects} />}
