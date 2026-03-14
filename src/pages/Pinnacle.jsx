@@ -145,6 +145,8 @@ function Pinnacle() {
       <div className="d-flex">
         {/* Navbat */}
         <div>
+          
+<div>
           {/*             <header className="app-topbar">
                 <div className="container-fluid topbar-menu">
                     <div className="d-flex align-items-center gap-2">
@@ -2967,7 +2969,7 @@ function Pinnacle() {
     </div>
 </div>
  */}
-
+</div>
           <div className="content-page">
             <div className="container-fluid">
               <div className="page-title-head d-flex align-items-center">
