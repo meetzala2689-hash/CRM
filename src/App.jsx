@@ -6,7 +6,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
-import Products from "./pages/Products";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import PrivateRoute from "./components/PrivateRoute";
@@ -29,6 +28,20 @@ import Finance from "./pages/Dashboard/Finance";
 import Projects from "./pages/Dashboard/Projects";
 import CRM from "./pages/Dashboard/CRM";
 import Cart from "./pages/Ecommerce/Cart";
+import Orders from "./pages/Ecommerce/Orders/Orders";
+import OrderDetails from "./pages/Ecommerce/Orders/OrderDetails";
+import AddEditOrder from "./pages/Ecommerce/Orders/AddEditOrder";
+import AddProduct from "./pages/Ecommerce/Products/AddProduct";
+import ProductsDetails from "./pages/Ecommerce/Products/ProductsDetails";
+import ProductsGrid from "./pages/Ecommerce/Products/ProductsGrid";
+import EcomProducts from "./pages/Ecommerce/Products/Products";
+import Sellers from "./pages/Ecommerce/Sellers/Sellers";
+import SellersDetails from './pages/Ecommerce/Sellers/SellersDetails';
+import Category from "./pages/Ecommerce/Category";
+import Checkout from "./pages/Ecommerce/Checkout";
+import Customers from "./pages/Ecommerce/Customers";
+import Refunds from "./pages/Ecommerce/Refunds";
+import Reviews from "./pages/Ecommerce/Reviews";
 function App() {
   const [projects, setProjects] = useState(() => {
     const saved = localStorage.getItem("projects");
@@ -64,10 +77,9 @@ function App() {
                             <Dashboard />
                           </PrivateRoute>
                         }
-                       />
+                      />
                       <Route path="users" element={<Users />} />
-                      <Route path="products" element={<Products />} />
-                      <Route path="/pinnacle" element={<Pinnacle />} />
+                      <Route path="pinnacle" element={<Pinnacle />} />
                       {/* <Route path="leads" element={<Leads />}/> */}
                       {/* <Route path="/opprtunities" element={<Opportunities />}/> */}
                       {/* <Route path="/contacts" element={<Contacts />} /> */}
@@ -76,21 +88,54 @@ function App() {
                       {/* <Route path="/properties" element={<Properties />} /> */}
                       {/* <Route path="/areas"  element={<Areas />}/> */}
                       {/* <Route path="/units"  element={<Units />}/> */}
-                      <Route path="/finance" element={<Finance />} />
-                      <Route path="/crm" element={<CRM />} />
-                      <Route path="/projects2" element={<Projects />} />
-                      <Route path="/cart" element={<Cart />} />
+
+                      {/* Dashboard */}
+                      {/* <Route path="analytics" element={<Analytics />} /> */}
                       <Route
-                        path="/dashboard-analytics.html"
+                        path="dashboard-analytics"
                         element={<Analytics />}
                       />
+                      <Route path="crm" element={<CRM />} />
+                      <Route path="finance" element={<Finance />} />
+                      <Route path="projects2" element={<Projects />} />
+
+                      {/* Ecommerce */}
+                      <Route path="cart" element={<Cart />} />
+                      <Route path="category" element={<Category />}/>
+                      <Route path="checkout" element={<Checkout />}/>
+                      <Route path="customers" element={<Customers />}/>
+                      <Route path="refunds" element={<Refunds />}/>
+                      <Route path="reviews" element={<Reviews />}/>
+                      {/* Orders */}
+                      <Route path="orders" element={<Orders />} />
                       <Route
-                        path="/project"
-                        element={<Project projects={projects} />}
+                        path="orderDetails"
+                        element={<OrderDetails />}
+                      />
+                      <Route
+                        path="addEditOrder"
+                        element={<AddEditOrder />}
                       />
 
+                      {/* Product */}
+                      <Route path="addproduct" element={<AddProduct />} />
                       <Route
-                        path="/ProjectModule"
+                        path="productDetails"
+                        element={<ProductsDetails />}
+                      />
+                      <Route path="productGrid" element={<ProductsGrid />} />
+                      <Route path="products" element={<EcomProducts />} />
+
+                      {/* Sellers */}
+                      <Route path="sellers" element={<Sellers />}/>
+                      <Route path="sellersDetails" element={<SellersDetails />} />
+
+                      <Route
+                        path="project"
+                        element={<Project projects={projects} />}
+                      />
+                      <Route
+                        path="ProjectModule"
                         element={<ProjectModule addProject={addProject} />}
                       />
                     </Routes>
