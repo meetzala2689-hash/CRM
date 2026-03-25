@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [loginData, setLoginData] = useState({ email: "", password: "" });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn === "true") {
+      navigate("/dashboard"); 
+    }
+  }, [navigate]);
 
   const handleChange = (e) => {
     setLoginData({ ...loginData, [e.target.name]: e.target.value });
@@ -56,8 +63,12 @@ const Login = () => {
     <div className="container-fluid vh-100 d-flex justify-content-center align-items-center bg-light">
       <div
         className="card shadow-lg border-0 p-4"
-        style={{ width: "100%", maxWidth: "500px", borderRadius: "12px", background: "linear-gradient(45deg, rgb(116, 181, 235), #c0cde0)" }}
-
+        style={{
+          width: "100%",
+          maxWidth: "500px",
+          borderRadius: "12px",
+          background: "linear-gradient(45deg, rgb(165, 205, 238), #c0cde0)",
+        }}
       >
         {/* Logo */}
         <div className="text-center mb-4">
@@ -65,9 +76,7 @@ const Login = () => {
             <span style={{ color: "rgb(255, 123, 0)" }}>Kirit</span>
             <span style={{ color: "#0d6efd" }}>Tech</span>
           </h2>
-          <p className="text-muted small mb-0">
-            Login to your account
-          </p>
+          <p className="text-muted small mb-0">Login to your account</p>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -102,8 +111,14 @@ const Login = () => {
           {/* Remember + Forgot */}
           <div className="d-flex justify-content-between mb-3">
             <div className="form-check">
-              <input className="form-check-input" type="checkbox" id="rememberMe" />
-              <label className="form-check-label small" htmlFor="rememberMe">Remember me</label>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="rememberMe"
+              />
+              <label className="form-check-label small" htmlFor="rememberMe">
+                Remember me
+              </label>
             </div>
 
             <a href="#" className="small text-decoration-none">
@@ -112,12 +127,9 @@ const Login = () => {
           </div>
 
           {/* Button */}
-          <button
-            type="submit"
-            className="btn btn-primary w-100 fw-semibold"
-          >
+          <button type="submit" className="btn btn-primary w-100 fw-semibold">
             Login
-          </button> 
+          </button>
 
           {/* Register */}
           <p className="text-center mt-3 small">

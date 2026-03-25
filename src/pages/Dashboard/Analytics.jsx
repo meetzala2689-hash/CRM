@@ -5,7 +5,7 @@ function Analytics() {
   return (
 
     <>
-    <Sidebar />
+    {/* <Sidebar /> */}
     <div>
          <div className="wrapper">
             <header className="app-topbar">

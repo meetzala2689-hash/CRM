@@ -3,6 +3,7 @@ import React from 'react'
 function Sellers() {
   return (
     <div>
+        <Sidebar />
         <div className="wrapper">
             <header className="app-topbar">
                 <div className="container-fluid topbar-menu">

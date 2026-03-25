@@ -1,8 +1,8 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import { Bar, Line, Pie, Doughnut } from "react-chartjs-2";
-import "../assets/theme/assets/css/vendors.min.css";
-import "../assets/theme/assets/css/app.min.css";
+// import "../assets/theme/assets/css/vendors.min.css";
+// import "../assets/theme/assets/css/app.min.css";
 
 function Pinnacle() {
 
@@ -4217,7 +4217,7 @@ function Pinnacle() {
             <div className="container-fluid">
               <div className="row">
                 <div className="col-md-6 text-center text-md-start">
-                  <script>document.write(new Date().getFullYear())</script>©
+                  {new Date().getFullYear()} ©
                   Paces - By{" "}
                   <span className="fw-bold text-decoration-underline text-uppercase text-reset fs-12">
                     Coderthemes
@@ -4245,7 +4245,7 @@ function Pinnacle() {
 
       <div
         className="offcanvas offcanvas-end overflow-hidden"
-        tabindex="-1"
+        tabIndex="-1"
         id="theme-settings-offcanvas"
       >
         <div
@@ -4291,7 +4291,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-default"
+                    htmlFor="demo-skin-default"
                   >
                     <img
                       src="assets/images/layouts/skin-default.png"
@@ -4314,7 +4314,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-minimal"
+                    htmlFor="demo-skin-minimal"
                   >
                     <img
                       src="assets/images/layouts/skin-minimal.png"
@@ -4337,7 +4337,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-modern"
+                    htmlFor="demo-skin-modern"
                   >
                     <img
                       src="assets/images/layouts/skin-modern.png"
@@ -4360,7 +4360,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-material"
+                    htmlFor="demo-skin-material"
                   >
                     <img
                       src="assets/images/layouts/skin-material.png"
@@ -4383,7 +4383,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-saas"
+                    htmlFor="demo-skin-saas"
                   >
                     <img
                       src="assets/images/layouts/skin-saas.png"
@@ -4406,7 +4406,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-flat"
+                    htmlFor="demo-skin-flat"
                   >
                     <img
                       src="assets/images/layouts/skin-flat.png"
@@ -4429,7 +4429,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-galaxy"
+                    htmlFor="demo-skin-galaxy"
                   >
                     <img
                       src="assets/images/layouts/skin-galaxy.png"
@@ -4452,7 +4452,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-luxe"
+                    htmlFor="demo-skin-luxe"
                   >
                     <img
                       src="assets/images/layouts/skin-luxe.png"
@@ -4475,7 +4475,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-retro"
+                    htmlFor="demo-skin-retro"
                   >
                     <img
                       src="assets/images/layouts/skin-retro.png"
@@ -4498,7 +4498,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-neon"
+                    htmlFor="demo-skin-neon"
                   >
                     <img
                       src="assets/images/layouts/skin-neon.png"
@@ -4521,7 +4521,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-pixel"
+                    htmlFor="demo-skin-pixel"
                   >
                     <img
                       src="assets/images/layouts/skin-pixel.png"
@@ -4544,7 +4544,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-soft"
+                    htmlFor="demo-skin-soft"
                   >
                     <img
                       src="assets/images/layouts/skin-soft.png"
@@ -4567,7 +4567,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-mono"
+                    htmlFor="demo-skin-mono"
                   >
                     <img
                       src="assets/images/layouts/skin-mono.png"
@@ -4590,7 +4590,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-prism"
+                    htmlFor="demo-skin-prism"
                   >
                     <img
                       src="assets/images/layouts/skin-prism.png"
@@ -4613,7 +4613,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-nova"
+                    htmlFor="demo-skin-nova"
                   >
                     <img
                       src="assets/images/layouts/skin-nova.png"
@@ -4636,7 +4636,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-zen"
+                    htmlFor="demo-skin-zen"
                   >
                     <img
                       src="assets/images/layouts/skin-zen.png"
@@ -4659,7 +4659,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-elegant"
+                    htmlFor="demo-skin-elegant"
                   >
                     <img
                       src="assets/images/layouts/skin-elegant.png"
@@ -4682,7 +4682,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-vivid"
+                    htmlFor="demo-skin-vivid"
                   >
                     <img
                       src="assets/images/layouts/skin-vivid.png"
@@ -4705,7 +4705,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-aurora"
+                    htmlFor="demo-skin-aurora"
                   >
                     <img
                       src="assets/images/layouts/skin-aurora.png"
@@ -4728,7 +4728,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-crystal"
+                    htmlFor="demo-skin-crystal"
                   >
                     <img
                       src="assets/images/layouts/skin-crystal.png"
@@ -4751,7 +4751,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-matrix"
+                    htmlFor="demo-skin-matrix"
                   >
                     <img
                       src="assets/images/layouts/skin-matrix.png"
@@ -4774,7 +4774,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-orbit"
+                    htmlFor="demo-skin-orbit"
                   >
                     <img
                       src="assets/images/layouts/skin-orbit.png"
@@ -4797,7 +4797,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-neo"
+                    htmlFor="demo-skin-neo"
                   >
                     <img
                       src="assets/images/layouts/skin-neo.png"
@@ -4820,7 +4820,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-silver"
+                    htmlFor="demo-skin-silver"
                   >
                     <img
                       src="assets/images/layouts/skin-silver.png"
@@ -4843,7 +4843,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="demo-skin-xenon"
+                    htmlFor="demo-skin-xenon"
                   >
                     <img
                       src="assets/images/layouts/skin-xenon.png"
@@ -4871,7 +4871,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-color-light"
+                    htmlFor="layout-color-light"
                   >
                     <img
                       src="assets/images/layouts/theme-light.png"
@@ -4894,7 +4894,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-color-dark"
+                    htmlFor="layout-color-dark"
                   >
                     <img
                       src="assets/images/layouts/theme-dark.png"
@@ -4917,7 +4917,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-color-system"
+                    htmlFor="layout-color-system"
                   >
                     <img
                       src="assets/images/layouts/theme-system.png"
@@ -4946,7 +4946,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-topbar-color-light"
+                    htmlFor="layout-topbar-color-light"
                   >
                     <img
                       src="assets/images/layouts/topbar-color-light.png"
@@ -4969,7 +4969,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-topbar-color-dark"
+                    htmlFor="layout-topbar-color-dark"
                   >
                     <img
                       src="assets/images/layouts/topbar-color-dark.png"
@@ -4992,7 +4992,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-topbar-color-gray"
+                    htmlFor="layout-topbar-color-gray"
                   >
                     <img
                       src="assets/images/layouts/topbar-color-gray.png"
@@ -5015,7 +5015,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-topbar-color-gradient"
+                    htmlFor="layout-topbar-color-gradient"
                   >
                     <img
                       src="assets/images/layouts/topbar-color-gradient.png"
@@ -5046,7 +5046,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-color-light"
+                    htmlFor="layout-sidenav-color-light"
                   >
                     <img
                       src="assets/images/layouts/sidenav-color-light.png"
@@ -5071,7 +5071,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-color-dark"
+                    htmlFor="layout-sidenav-color-dark"
                   >
                     <img
                       src="assets/images/layouts/sidenav-color-dark.png"
@@ -5094,7 +5094,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-color-gray"
+                    htmlFor="layout-sidenav-color-gray"
                   >
                     <img
                       src="assets/images/layouts/sidenav-color-gray.png"
@@ -5117,7 +5117,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-color-gradient"
+                    htmlFor="layout-sidenav-color-gradient"
                   >
                     <img
                       src="assets/images/layouts/sidenav-color-gradient.png"
@@ -5141,7 +5141,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-color-image"
+                    htmlFor="layout-sidenav-color-image"
                   >
                     <img
                       src="assets/images/layouts/sidenav-color-image.png"
@@ -5172,7 +5172,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-default"
+                    htmlFor="layout-sidenav-size-default"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-default.png"
@@ -5195,7 +5195,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-compact"
+                    htmlFor="layout-sidenav-size-compact"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-compact.png"
@@ -5218,7 +5218,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-condensed"
+                    htmlFor="layout-sidenav-size-condensed"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-condensed.png"
@@ -5241,7 +5241,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-small-hover"
+                    htmlFor="layout-sidenav-size-small-hover"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-on-hover.png"
@@ -5264,7 +5264,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-small-hover-active"
+                    htmlFor="layout-sidenav-size-small-hover-active"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-on-hover-active.png"
@@ -5289,7 +5289,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-sidenav-size-offcanvas"
+                    htmlFor="layout-sidenav-size-offcanvas"
                   >
                     <img
                       src="assets/images/layouts/sidenav-size-offcanvas.png"
@@ -5318,7 +5318,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-width-fluid"
+                    htmlFor="layout-width-fluid"
                   >
                     <img
                       src="assets/images/layouts/width-fluid.png"
@@ -5341,7 +5341,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-width-boxed"
+                    htmlFor="layout-width-boxed"
                   >
                     <img
                       src="assets/images/layouts/width-boxed.png"
@@ -5370,7 +5370,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-dir-ltr"
+                    htmlFor="layout-dir-ltr"
                   >
                     <img
                       src="assets/images/layouts/dir-ltr.png"
@@ -5393,7 +5393,7 @@ function Pinnacle() {
                   />
                   <label
                     className="form-check-label p-0 w-100"
-                    for="layout-dir-rtl"
+                    htmlFor="layout-dir-rtl"
                   >
                     <img
                       src="assets/images/layouts/dir-rtl.png"
@@ -5422,7 +5422,7 @@ function Pinnacle() {
                   />
                   <label
                     className="btn btn-sm btn-soft-warning w-sm"
-                    for="layout-position-fixed"
+                    htmlFor="layout-position-fixed"
                   >
                     Fixed
                   </label>
@@ -5437,7 +5437,7 @@ function Pinnacle() {
                   />
                   <label
                     className="btn btn-sm btn-soft-warning w-sm ms-0"
-                    for="layout-position-scrollable"
+                    htmlFor="layout-position-scrollable"
                   >
                     Scrollable
                   </label>
@@ -5449,7 +5449,7 @@ function Pinnacle() {
           <div id="sidenav-user" className="p-3">
             <div className="d-flex justify-content-between align-items-center">
               <h5 className="mb-0">
-                <label className="fw-bold m-0" for="sidebaruser-check">
+                <label className="fw-bold m-0" htmlFor="sidebaruser-check">
                   Sidebar User Info
                 </label>
               </h5>

@@ -1,16 +1,13 @@
 import React from 'react'
 
-function Customers() {
+function Warehouse() {
   return (
     <div>
-        <Sidebar />
         <div className="wrapper">
             <header className="app-topbar">
                 <div className="container-fluid topbar-menu">
                     <div className="d-flex align-items-center gap-2">
-                
                         <div className="logo-topbar">
-                
                             <a href="index.html" className="logo-light">
                                 <span className="logo-lg">
                                     <img src="assets/images/logo.png" alt="logo" />
@@ -33,7 +30,6 @@ function Customers() {
                         <button className="sidenav-toggle-button btn btn-primary btn-icon">
                             <i className="ti ti-menu-4"></i>
                         </button>
-
                         <button className="topnav-toggle-button px-2" data-bs-toggle="collapse" data-bs-target="#topnav-menu">
                             <i className="ti ti-menu-4"></i>
                         </button>
@@ -127,7 +123,6 @@ function Customers() {
                                                     </ul>
                                                 </div>
                                             </div>
-
                                             <div className="col-md-4">
                                                 <div className="p-2 bg-light bg-opacity-50">
                                                     <h5 className="mb-1 fw-semibold fs-sm dropdown-header">User Management</h5>
@@ -302,7 +297,6 @@ function Customers() {
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div className="row g-0 border-top border-light border-dashed text-center">
                                                     <div className="col">
                                                         <div className="p-3">
@@ -504,7 +498,6 @@ function Customers() {
                                     </div>
 
                                     <div style="max-height: 300px" data-simplebar="">
-                                
                                         <div className="dropdown-item notification-item py-2 text-wrap" id="message-1">
                                             <span className="d-flex align-items-center gap-3">
                                                 <span className="flex-shrink-0 position-relative">
@@ -571,7 +564,6 @@ function Customers() {
                                                 </button>
                                             </span>
                                         </div>
-
                                         <div className="dropdown-item notification-item py-2 text-wrap" id="message-3">
                                             <span className="d-flex align-items-center gap-3">
                                                 <span className="flex-shrink-0 position-relative">
@@ -738,7 +730,6 @@ function Customers() {
                                     </div>
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                            
                                     <div className="dropdown-header noti-title">
                                         <h6 className="text-overflow m-0">Welcome back 👋!</h6>
                                     </div>
@@ -747,7 +738,6 @@ function Customers() {
                                         <i className="ti ti-user-circle me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Profile</span>
                                     </a>
-
                                     <a href="javascript:void(0);" className="dropdown-item">
                                         <i className="ti ti-bell-ringing me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Notifications</span>
@@ -757,7 +747,6 @@ function Customers() {
                                         <i className="ti ti-settings-2 me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Account Settings</span>
                                     </a>
-
                                     <a href="javascript:void(0);" className="dropdown-item">
                                         <i className="ti ti-headset me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Support Center</span>
@@ -781,7 +770,6 @@ function Customers() {
                 </div>
             </header>
  <div className="sidenav-menu">
-  
     <a href="index.html" className="logo">
         <span className="logo logo-light">
             <span className="logo-lg"><img src="assets/images/logo.png" alt="logo" /></span>
@@ -818,7 +806,7 @@ function Customers() {
                     </a>
 
                     <div className="dropdown-menu">
-                  
+                     
                         <div className="dropdown-header noti-title">
                             <h6 className="text-overflow m-0">Welcome back!</h6>
                         </div>
@@ -2800,347 +2788,102 @@ function Customers() {
                 <div className="container-fluid">
                     <div className="page-title-head d-flex align-items-center">
                         <div className="flex-grow-1">
-                            <h4 className="page-main-title m-0">Customers</h4>
+                            <h4 className="page-main-title m-0">Warehouse</h4>
                         </div>
 
                         <div className="text-end">
                             <ol className="breadcrumb m-0 py-0">
                                 <li className="breadcrumb-item"><a href="javascript: void(0);">Paces</a></li>
                                 <li className="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                <li className="breadcrumb-item active">Customers</li>
+                                <li className="breadcrumb-item active">Warehouse</li>
                             </ol>
                         </div>
                     </div>
 
 
                     <div className="row">
-                        <div className="col-xxl-12">
-                            <div data-table data-table-rows-per-page="8" className="card">
-                                <div className="card-header border-light d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <div className="col-12">
+                            <div data-table data-table-rows-per-page="10" className="card">
+                                <div className="card-header border-light justify-content-between">
                                     <div className="d-flex gap-2">
                                         <div className="app-search">
-                                            <input data-table-search type="search" className="form-control" placeholder="Search customer..." />
+                                            <input data-table-search type="search" className="form-control" placeholder="Search..." />
                                             <i className="ti ti-search app-search-icon text-muted"></i>
                                         </div>
+
                                         <button data-table-delete-selected className="btn btn-danger d-none">Delete</button>
                                     </div>
 
-                                    <div className="d-flex align-items-center gap-2">
-                                    
+                                    <div className="d-flex align-items-center gap-2 flex-wrap">
+                                        <span className="me-2 fw-semibold">Filter By:</span>
+
+                                        <div className="app-search">
+                                            <select data-table-filter="warehouse-status" className="form-select form-control my-1 my-md-0">
+                                                <option value="All">Warehouse Status</option>
+                                                <option value="Operational">Operational</option>
+                                                <option value="Maintenance">Under Maintenance</option>
+                                                <option value="Closed">Closed</option>
+                                            </select>
+                                            <i className="ti ti-building app-search-icon text-muted"></i>
+                                        </div>
+
+                                        <div className="app-search">
+                                            <select data-table-filter="warehouse-location" className="form-select form-control my-1 my-md-0">
+                                                <option value="All">Location</option>
+                                                <option value="New York, USA">New York</option>
+                                                <option value="Boston, USA">Boston</option>
+                                                <option value="Los Angeles, USA">Los Angeles</option>
+                                                <option value="Berlin, Germany">Berlin</option>
+                                                <option value="Singapore">Singapore</option>
+                                                <option value="Dubai, UAE">Dubai</option>
+                                            </select>
+                                            <i className="ti ti-map-pin app-search-icon text-muted"></i>
+                                        </div>
                                         <div>
                                             <select data-table-set-rows-per-page className="form-select form-control my-1 my-md-0">
                                                 <option value="5">5</option>
-                                                <option value="10">10</option>
+                                                <option value="10" selected>10</option>
                                                 <option value="15">15</option>
                                                 <option value="20">20</option>
                                             </select>
                                         </div>
+                                    </div>
 
-                                        <div className="dropdown">
-                                            <button className="btn btn-default dropdown-toggle drop-arrow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="ti ti-download me-1"></i> Export <i className="ti ti-chevron-down align-middle ms-1"></i></button>
-                                            <ul className="dropdown-menu dropdown-menu-end">
-                                                <li><a className="dropdown-item" href="#">Export as PDF</a></li>
-                                                <li><a className="dropdown-item" href="#">Export as CSV</a></li>
-                                                <li><a className="dropdown-item" href="#">Export as Excel</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#!" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal"> <i className="ti ti-plus me-1 fs-sm"></i> Add Customer </a>
+                                    <div className="d-flex gap-1">
+                                        <a href="#addWarehouseModal" className="btn btn-danger ms-1" data-bs-toggle="modal"> <i className="ti ti-plus fs-sm me-2"></i> Add New </a>
                                     </div>
                                 </div>
 
                                 <div className="table-responsive">
                                     <table className="table table-custom table-centered table-select table-hover w-100 mb-0">
-                                        <thead className="bg-light bg-opacity-25 thead-sm">
+                                        <thead className="bg-light align-middle bg-opacity-25 thead-sm">
                                             <tr className="text-uppercase fs-xxs">
                                                 <th className="ps-3" style="width: 1%">
-                                                    <input data-table-select-all className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" id="select-all-products" />
+                                                    <input data-table-select-all className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" />
                                                 </th>
-                                                <th data-table-sort="customer">Clients Name</th>
-                                                <th data-table-sort>Email</th>
-                                                <th data-table-sort>Phone</th>
-                                                <th data-table-sort>Country</th>
-                                                <th data-table-sort>Joined</th>
-                                                <th data-table-sort>Orders</th>
-                                                <th data-table-sort>Total Spends</th>
-                                                <th className="text-center">Actions</th>
+                                                <th data-table-sort>ID</th>
+                                                <th data-table-sort>Name</th>
+                                                <th data-table-sort data-column="warehouse-location">Location</th>
+                                                <th data-table-sort>Manager</th>
+                                                <th data-table-sort>Contact</th>
+                                                <th data-table-sort>Capacity</th>
+                                                <th data-table-sort>Avai. Stock</th>
+                                                <th data-table-sort>Stock Shipping</th>
+                                                <th data-table-sort>Revenue</th>
+                                                <th data-table-sort data-column="warehouse-status">Status</th>
+                                                <th className="text-center" style="width: 1%">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-001</h5></td>
+                                                <td>Central Distribution Hub</td>
                                                 <td>
                                                     <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-7.jpg" alt="avatar-7" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Carlos Méndez</a>
-                                                            </h5>
-                                                        </div>
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>New York, USA</span>
                                                     </div>
-                                                </td>
-                                                <td>carlos&#64;techlaunch.mx</td>
-                                                <td>+1 (415) 992-3412</td>
-                                                <td><img src="assets/images/flags/us.svg" alt="" className="rounded-circle me-1" height="16" /> United States</td>
-                                                <td>2 Feb, 2024 <small className="text-muted">08:34 AM</small></td>
-                                                <td>58</td>
-                                                <td>$198.25</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-2.jpg" alt="avatar-2" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Sophie Laurent</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>sophie.laurent&#64;eurotech.fr</td>
-                                                <td>+33 6 12 34 56 78</td>
-                                                <td><img src="assets/images/flags/fr.svg" alt="" className="rounded-circle me-1" height="16" /> France</td>
-                                                <td>15 Mar, 2024 <small className="text-muted">10:22 AM</small></td>
-                                                <td>42</td>
-                                                <td>$245.80</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-3.jpg" alt="avatar-3" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Akira Tanaka</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>akira.tanaka&#64;techjapan.co.jp</td>
-                                                <td>+81 90-1234-5678</td>
-                                                <td><img src="assets/images/flags/jp.svg" alt="" className="rounded-circle me-1" height="16" /> Japan</td>
-                                                <td>28 Jan, 2024 <small className="text-muted">03:15 PM</small></td>
-                                                <td>75</td>
-                                                <td>$320.50</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-4.jpg" alt="avatar-4" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Emma Watson</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>emma.watson&#64;britinnovate.uk</td>
-                                                <td>+44 7700 900123</td>
-                                                <td><img src="assets/images/flags/gb.svg" alt="" className="rounded-circle me-1" height="16" /> United Kingdom</td>
-                                                <td>10 Apr, 2024 <small className="text-muted">09:47 AM</small></td>
-                                                <td>29</td>
-                                                <td>$175.30</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-5.jpg" alt="avatar-5" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Lucas Schmidt</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>lucas.schmidt&#64;techdeutsch.de</td>
-                                                <td>+49 151 23456789</td>
-                                                <td><img src="assets/images/flags/de.svg" alt="" className="rounded-circle me-1" height="16" /> Germany</td>
-                                                <td>20 Feb, 2024 <small className="text-muted">02:10 PM</small></td>
-                                                <td>63</td>
-                                                <td>$280.75</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-6.jpg" alt="avatar-6" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Isabella Rossi</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>isabella.rossi&#64;italiatech.it</td>
-                                                <td>+39 333 4567890</td>
-                                                <td><img src="assets/images/flags/it.svg" alt="" className="rounded-circle me-1" height="16" /> Italy</td>
-                                                <td>5 Mar, 2024 <small className="text-muted">11:25 AM</small></td>
-                                                <td>51</td>
-                                                <td>$210.40</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-8.jpg" alt="avatar-8" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Mateo Vargas</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>mateo.vargas&#64;latamtech.ar</td>
-                                                <td>+54 9 11 2345 6789</td>
-                                                <td><img src="assets/images/flags/ar.svg" alt="" className="rounded-circle me-1" height="16" /> Argentina</td>
-                                                <td>18 Apr, 2024 <small className="text-muted">04:50 PM</small></td>
-                                                <td>37</td>
-                                                <td>$190.20</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-9.jpg" alt="avatar-9" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Priya Sharma</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>priya.sharma&#64;indotech.in</td>
-                                                <td>+91 98765 43210</td>
-                                                <td><img src="assets/images/flags/in.svg" alt="" className="rounded-circle me-1" height="16" /> India</td>
-                                                <td>10 Jan, 2024 <small className="text-muted">06:30 AM</small></td>
-                                                <td>82</td>
-                                                <td>$350.90</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-10.jpg" alt="avatar-10" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Liam O’Connor</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>liam.oconnor&#64;ausinnovate.au</td>
-                                                <td>+61 400 123 456</td>
-                                                <td><img src="assets/images/flags/au.svg" alt="" className="rounded-circle me-1" height="16" /> Australia</td>
-                                                <td>25 Mar, 2024 <small className="text-muted">01:15 PM</small></td>
-                                                <td>45</td>
-                                                <td>$230.65</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
                                                 </td>
                                                 <td>
                                                     <div className="d-flex align-items-center gap-2">
@@ -3148,23 +2891,454 @@ function Customers() {
                                                             <img src="assets/images/users/user-1.jpg" alt="avatar-1" className="img-fluid rounded-circle" />
                                                         </div>
                                                         <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Olga Petrova</a>
-                                                            </h5>
+                                                            <h6 className="mb-0 fw-semibold">Olivia Brown</h6>
+                                                            <p className="text-muted fs-xs mb-0">olivia.brown&#64;company.com</p>
                                                         </div>
                                                     </div>
                                                 </td>
-                                                <td>olga.petrova&#64;rus-tech.ru</td>
-                                                <td>+7 912 345 67 89</td>
-                                                <td><img src="assets/images/flags/ru.svg" alt="" className="rounded-circle me-1" height="16" /> Russia</td>
-                                                <td>8 Feb, 2024 <small className="text-muted">07:40 AM</small></td>
-                                                <td>68</td>
-                                                <td>$295.15</td>
+                                                <td><a href="tel:+14165559876" className="text-reset">+1 416 555 9876</a></td>
+                                                <td>95,000 sq.ft</td>
+                                                <td>38,240 units</td>
+                                                <td>12,680 units</td>
+                                                <td>$1.28M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm" data-table-delete-row><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-002</h5></td>
+                                                <td>East Coast Storage</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Boston, USA</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-2.jpg" alt="avatar-2" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Ethan Walker</h6>
+                                                            <p className="text-muted fs-xs mb-0">ethan.walker&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+14165551234" className="text-reset">+1 416 555 1234</a></td>
+                                                <td>68,000 sq.ft</td>
+                                                <td>22,500 units</td>
+                                                <td>9,340 units</td>
+                                                <td>$870K</td>
+                                                <td><span className="badge badge-soft-warning fs-xxs">Maintenance</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-003</h5></td>
+                                                <td>West Coast Depot</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Los Angeles, USA</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-3.jpg" alt="avatar-3" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Sophia Green</h6>
+                                                            <p className="text-muted fs-xs mb-0">sophia.green&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+13105557654" className="text-reset">+1 310 555 7654</a></td>
+                                                <td>120,000 sq.ft</td>
+                                                <td>51,800 units</td>
+                                                <td>14,250 units</td>
+                                                <td>$1.94M</td>
+                                                <td><span className="badge badge-soft-danger fs-xxs">Closed</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-004</h5></td>
+                                                <td>Europe Main Hub</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Berlin, Germany</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-4.jpg" alt="avatar-4" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Liam Becker</h6>
+                                                            <p className="text-muted fs-xs mb-0">liam.becker&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+49301234567" className="text-reset">+49 30 1234 567</a></td>
+                                                <td>88,000 sq.ft</td>
+                                                <td>29,400 units</td>
+                                                <td>10,200 units</td>
+                                                <td>$980K</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-005</h5></td>
+                                                <td>Asia-Pacific Logistics</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Singapore</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-5.jpg" alt="avatar-5" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Isabella Tan</h6>
+                                                            <p className="text-muted fs-xs mb-0">isabella.tan&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+6567892345" className="text-reset">+65 6789 2345</a></td>
+                                                <td>102,000 sq.ft</td>
+                                                <td>47,600 units</td>
+                                                <td>8,700 units</td>
+                                                <td>$1.15M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-006</h5></td>
+                                                <td>Middle East Distribution</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Dubai, UAE</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-6.jpg" alt="avatar-6" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Omar Khalid</h6>
+                                                            <p className="text-muted fs-xs mb-0">omar.khalid&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+97145567890" className="text-reset">+971 4 556 7890</a></td>
+                                                <td>77,000 sq.ft</td>
+                                                <td>33,900 units</td>
+                                                <td>7,850 units</td>
+                                                <td>$940K</td>
+                                                <td><span className="badge badge-soft-warning fs-xxs">Maintenance</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-007</h5></td>
+                                                <td>South America Hub</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>São Paulo, Brazil</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-7.jpg" alt="avatar-7" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Mateo Silva</h6>
+                                                            <p className="text-muted fs-xs mb-0">mateo.silva&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+551112345678" className="text-reset">+55 11 1234 5678</a></td>
+                                                <td>90,000 sq.ft</td>
+                                                <td>41,200 units</td>
+                                                <td>11,800 units</td>
+                                                <td>$1.02M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-008</h5></td>
+                                                <td>Africa Distribution Center</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Johannesburg, South Africa</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-8.jpg" alt="avatar-8" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Ava Mokoena</h6>
+                                                            <p className="text-muted fs-xs mb-0">ava.mokoena&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+27115555678" className="text-reset">+27 11 555 5678</a></td>
+                                                <td>85,000 sq.ft</td>
+                                                <td>36,900 units</td>
+                                                <td>9,900 units</td>
+                                                <td>$895K</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-009</h5></td>
+                                                <td>Canada Regional Center</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Toronto, Canada</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-9.jpg" alt="avatar-9" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Noah Clarke</h6>
+                                                            <p className="text-muted fs-xs mb-0">noah.clarke&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+14165553456" className="text-reset">+1 416 555 3456</a></td>
+                                                <td>92,000 sq.ft</td>
+                                                <td>40,850 units</td>
+                                                <td>10,600 units</td>
+                                                <td>$1.12M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-010</h5></td>
+                                                <td>Australia Main Warehouse</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Sydney, Australia</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-10.jpg" alt="avatar-10" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Amelia White</h6>
+                                                            <p className="text-muted fs-xs mb-0">amelia.white&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+61298765432" className="text-reset">+61 2 9876 5432</a></td>
+                                                <td>105,000 sq.ft</td>
+                                                <td>50,200 units</td>
+                                                <td>12,450 units</td>
+                                                <td>$1.35M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-011</h5></td>
+                                                <td>Nordic Storage Facility</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Stockholm, Sweden</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-1.jpg" alt="avatar-11" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Freja Lind</h6>
+                                                            <p className="text-muted fs-xs mb-0">freja.lind&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+46855667890" className="text-reset">+46 8 5566 7890</a></td>
+                                                <td>80,000 sq.ft</td>
+                                                <td>34,500 units</td>
+                                                <td>7,450 units</td>
+                                                <td>$880K</td>
+                                                <td><span className="badge badge-soft-warning fs-xxs">Maintenance</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-012</h5></td>
+                                                <td>Central Asia Logistics</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Almaty, Kazakhstan</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-7.jpg" alt="avatar-12" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Nursultan Aydin</h6>
+                                                            <p className="text-muted fs-xs mb-0">nursultan.aydin&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+77272345678" className="text-reset">+7 727 234 5678</a></td>
+                                                <td>70,000 sq.ft</td>
+                                                <td>28,300 units</td>
+                                                <td>8,200 units</td>
+                                                <td>$760K</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3"><input className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" /></td>
+                                                <td><h5 className="fs-sm mb-0">#WH-013</h5></td>
+                                                <td>Japan Coastal Warehouse</td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <i className="ti ti-map-pin text-muted fs-sm"></i>
+                                                        <span>Osaka, Japan</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex align-items-center gap-2">
+                                                        <div className="avatar avatar-sm">
+                                                            <img src="assets/images/users/user-4.jpg" alt="avatar-13" className="img-fluid rounded-circle" />
+                                                        </div>
+                                                        <div>
+                                                            <h6 className="mb-0 fw-semibold">Haruto Sato</h6>
+                                                            <p className="text-muted fs-xs mb-0">haruto.sato&#64;company.com</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td><a href="tel:+81678901234" className="text-reset">+81 6 7890 1234</a></td>
+                                                <td>99,000 sq.ft</td>
+                                                <td>45,900 units</td>
+                                                <td>11,600 units</td>
+                                                <td>$1.22M</td>
+                                                <td><span className="badge badge-soft-success fs-xxs">Operational</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-eye fs-lg"></i></a>
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm"><i className="ti ti-edit fs-lg"></i></a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm"><i className="ti ti-trash fs-lg"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -3173,67 +3347,91 @@ function Customers() {
                                 </div>
                                 <div className="card-footer border-0">
                                     <div className="d-flex justify-content-between align-items-center">
-                                        <div data-table-pagination-info="customers"></div>
-
+                                        <div data-table-pagination-info="orders"></div>
                                         <div data-table-pagination></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-lg modal-dialog-centered">
+                    <div className="modal fade" id="addWarehouseModal" tabindex="-1" aria-labelledby="addWarehouseModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered modal-lg">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="addCustomerModalLabel">Add New Customer</h5>
+                                    <h5 className="modal-title fw-semibold" id="addWarehouseModalLabel"><i className="ti ti-building me-2 text-danger"></i> Add New Warehouse</h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
 
-                                <form id="addCustomerForm">
+                                <form action="#!" method="post">
                                     <div className="modal-body">
                                         <div className="row g-3">
                                             <div className="col-md-6">
-                                                <label for="customerName" className="form-label">Full Name</label>
-                                                <input type="text" className="form-control" id="customerName" placeholder="e.g. Carlos Méndez" required />
+                                                <label for="warehouseId" className="form-label fw-semibold">Warehouse ID</label>
+                                                <input type="text" id="warehouseId" className="form-control" placeholder="#WH-002" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerEmail" className="form-label">Email</label>
-                                                <input type="email" className="form-control" id="customerEmail" placeholder="e.g. carlos&#64;domain.com" required />
+                                                <label for="warehouseName" className="form-label fw-semibold">Warehouse Name</label>
+                                                <input type="text" id="warehouseName" className="form-control" placeholder="North Region Hub" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerPhone" className="form-label">Phone</label>
-                                                <input type="tel" className="form-control" id="customerPhone" placeholder="+1 (415) 992-3412" required />
+                                                <label for="warehouseLocation" className="form-label fw-semibold">Location</label>
+                                                <input type="text" id="warehouseLocation" className="form-control" placeholder="Los Angeles, USA" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerCountry" className="form-label">Country</label>
-                                                <select className="form-select" id="customerCountry" required>
-                                                    <option value="">Select Country</option>
-                                                    <option value="United States">🇺🇸 United States</option>
-                                                    <option value="Canada">🇨🇦 Canada</option>
-                                                    <option value="United Kingdom">🇬🇧 United Kingdom</option>
-                                                    <option value="India">🇮🇳 India</option>
+                                                <label for="warehouseManager" className="form-label fw-semibold">Manager Name</label>
+                                                <input type="text" id="warehouseManager" className="form-control" placeholder="Liam Parker" />
+                                            </div>
 
+                                            <div className="col-md-6">
+                                                <label for="warehouseEmail" className="form-label fw-semibold">Manager Email</label>
+                                                <input type="email" id="warehouseEmail" className="form-control" placeholder="liam.parker&#64;company.com" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehousePhone" className="form-label fw-semibold">Contact Number</label>
+                                                <input type="tel" id="warehousePhone" className="form-control" placeholder="+1 212 555 0184" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehouseArea" className="form-label fw-semibold">Total Area</label>
+                                                <input type="text" id="warehouseArea" className="form-control" placeholder="85,000 sq.ft" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehouseCapacity" className="form-label fw-semibold">Total Capacity</label>
+                                                <input type="text" id="warehouseCapacity" className="form-control" placeholder="40,000 units" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehouseStock" className="form-label fw-semibold">Current Stock</label>
+                                                <input type="text" id="warehouseStock" className="form-control" placeholder="12,500 units" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehouseValue" className="form-label fw-semibold">Asset Value</label>
+                                                <div className="input-group">
+                                                    <span className="input-group-text">$</span>
+                                                    <input type="number" id="warehouseValue" className="form-control" placeholder="1.25M" />
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="warehouseStatus" className="form-label fw-semibold">Status</label>
+                                                <select id="warehouseStatus" className="form-select">
+                                                    <option selected>Operational</option>
+                                                    <option>Under Maintenance</option>
+                                                    <option>Closed</option>
                                                 </select>
-                                            </div>
-
-                                            <div className="col-md-6">
-                                                <label for="customerAvatar" className="form-label">Avatar</label>
-                                                <input type="file" className="form-control" id="customerAvatar" accept="image/*" />
-                                            </div>
-
-                                            <div className="col-md-6">
-                                                <label for="joinedDate" className="form-label">Join Date</label>
-                                                <input type="date" className="form-control" id="joinedDate" data-provider="flatpickr" data-date-format="d M, Y" required />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" className="btn btn-primary">Add Customer</button>
+                                        <button type="submit" className="btn btn-danger"><i className="ti ti-check me-1"></i> Save Warehouse</button>
                                     </div>
                                 </form>
                             </div>
@@ -3838,4 +4036,4 @@ function Customers() {
   )
 }
 
-export default Customers
+export default Warehouse

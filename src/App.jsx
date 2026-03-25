@@ -36,12 +36,20 @@ import ProductsDetails from "./pages/Ecommerce/Products/ProductsDetails";
 import ProductsGrid from "./pages/Ecommerce/Products/ProductsGrid";
 import EcomProducts from "./pages/Ecommerce/Products/Products";
 import Sellers from "./pages/Ecommerce/Sellers/Sellers";
-import SellersDetails from './pages/Ecommerce/Sellers/SellersDetails';
+import SellersDetails from "./pages/Ecommerce/Sellers/SellersDetails";
 import Category from "./pages/Ecommerce/Category";
 import Checkout from "./pages/Ecommerce/Checkout";
 import Customers from "./pages/Ecommerce/Customers";
 import Refunds from "./pages/Ecommerce/Refunds";
 import Reviews from "./pages/Ecommerce/Reviews";
+import Productstocks from "./pages/Ecommerce/Inventory/Productstocks";
+import PurchasedOrders from "./pages/Ecommerce/Inventory/PurchasedOrders";
+import Warehouse from "./pages/Ecommerce/Inventory/Warehouse";
+import Productviews from "./pages/Ecommerce/Report/Productviews";
+import Sales from "./pages/Ecommerce/Report/Sales";
+import Attributes from "./pages/Ecommerce/Attributes";
+import Settingd from "./pages/Ecommerce/Settingd";
+import Chat from "./pages/Chat";
 function App() {
   const [projects, setProjects] = useState(() => {
     const saved = localStorage.getItem("projects");
@@ -78,8 +86,16 @@ function App() {
                           </PrivateRoute>
                         }
                       />
-                      <Route path="users" element={<Users />} />
-                      <Route path="pinnacle" element={<Pinnacle />} />
+                      <Route
+                        path="/project"
+                        element={<Project projects={projects} />}
+                      />
+                      <Route
+                        path="/ProjectModule"
+                        element={<ProjectModule addProject={addProject} />}
+                      />
+                      <Route path="/users" element={<Users />} />
+                      <Route path="/pinnacle" element={<Pinnacle />} />
                       {/* <Route path="leads" element={<Leads />}/> */}
                       {/* <Route path="/opprtunities" element={<Opportunities />}/> */}
                       {/* <Route path="/contacts" element={<Contacts />} /> */}
@@ -90,54 +106,54 @@ function App() {
                       {/* <Route path="/units"  element={<Units />}/> */}
 
                       {/* Dashboard */}
-                      {/* <Route path="analytics" element={<Analytics />} /> */}
                       <Route
-                        path="dashboard-analytics"
+                        path="/dashboard-analytics"
                         element={<Analytics />}
                       />
-                      <Route path="crm" element={<CRM />} />
-                      <Route path="finance" element={<Finance />} />
-                      <Route path="projects2" element={<Projects />} />
+                      <Route path="/crm" element={<CRM />} />
+                      <Route path="/finance" element={<Finance />} />
+                      <Route path="/projects2" element={<Projects />} />
 
                       {/* Ecommerce */}
-                      <Route path="cart" element={<Cart />} />
-                      <Route path="category" element={<Category />}/>
-                      <Route path="checkout" element={<Checkout />}/>
-                      <Route path="customers" element={<Customers />}/>
-                      <Route path="refunds" element={<Refunds />}/>
-                      <Route path="reviews" element={<Reviews />}/>
+                      <Route path="/cart" element={<Cart />} />
+                      <Route path="/category" element={<Category />} />
+                      <Route path="/checkout" element={<Checkout />} />
+                      <Route path="/customers" element={<Customers />} />
+                      <Route path="/refunds" element={<Refunds />} />
+                      <Route path="/reviews" element={<Reviews />} />
+                      <Route path="/attributes" element={<Attributes />}/>
+                      <Route path="/settings" element={<Settingd />}/>
                       {/* Orders */}
-                      <Route path="orders" element={<Orders />} />
-                      <Route
-                        path="orderDetails"
-                        element={<OrderDetails />}
-                      />
-                      <Route
-                        path="addEditOrder"
-                        element={<AddEditOrder />}
-                      />
+                      <Route path="/orders" element={<Orders />} />
+                      <Route path="/orderDetails" element={<OrderDetails />} />
+                      <Route path="/addEditOrder" element={<AddEditOrder />} />
 
                       {/* Product */}
-                      <Route path="addproduct" element={<AddProduct />} />
+                      <Route path="/addproduct" element={<AddProduct />} />
                       <Route
-                        path="productDetails"
+                        path="/productDetails"
                         element={<ProductsDetails />}
                       />
-                      <Route path="productGrid" element={<ProductsGrid />} />
-                      <Route path="products" element={<EcomProducts />} />
+                      <Route path="/productGrid" element={<ProductsGrid />} />
+                      <Route path="/products" element={<EcomProducts />} />
 
                       {/* Sellers */}
-                      <Route path="sellers" element={<Sellers />}/>
-                      <Route path="sellersDetails" element={<SellersDetails />} />
+                      <Route path="/sellers" element={<Sellers />} />
+                      <Route
+                        path="/sellersDetails"
+                        element={<SellersDetails />}
+                      />
+                      {/* Inventory */}
+                      <Route path="/productstocks" element={<Productstocks />}/>
+                      <Route path="/purchasedorders" element={<PurchasedOrders />}/>
+                      <Route path="/warehouse" element={<Warehouse />} />
 
-                      <Route
-                        path="project"
-                        element={<Project projects={projects} />}
-                      />
-                      <Route
-                        path="ProjectModule"
-                        element={<ProjectModule addProject={addProject} />}
-                      />
+                      {/* Report */}
+                      <Route path="/productviews" element={<Productviews />}/>
+                      <Route path="/sales" element={<Sales />}/>
+
+                      {/* Chat */}
+                      <Route path="/chat" element={<Chat />}/>
                     </Routes>
                   </div>
                 </div>

@@ -1,8 +1,10 @@
 import React from 'react'
+import Sidebar from '../../components/Sidebar'
 
 function Cart() {
   return (
     <div>
+        <Sidebar />
         <div className="wrapper">
             <header className="app-topbar">
                 <div className="container-fluid topbar-menu">

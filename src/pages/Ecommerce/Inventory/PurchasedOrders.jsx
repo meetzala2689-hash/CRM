@@ -1,16 +1,13 @@
 import React from 'react'
 
-function Customers() {
+function PurchasedOrders() {
   return (
     <div>
-        <Sidebar />
         <div className="wrapper">
             <header className="app-topbar">
                 <div className="container-fluid topbar-menu">
                     <div className="d-flex align-items-center gap-2">
-                
                         <div className="logo-topbar">
-                
                             <a href="index.html" className="logo-light">
                                 <span className="logo-lg">
                                     <img src="assets/images/logo.png" alt="logo" />
@@ -504,7 +501,7 @@ function Customers() {
                                     </div>
 
                                     <div style="max-height: 300px" data-simplebar="">
-                                
+
                                         <div className="dropdown-item notification-item py-2 text-wrap" id="message-1">
                                             <span className="d-flex align-items-center gap-3">
                                                 <span className="flex-shrink-0 position-relative">
@@ -615,7 +612,6 @@ function Customers() {
                                                 </button>
                                             </span>
                                         </div>
-
                                         <div className="dropdown-item notification-item py-2 text-wrap" id="message-5">
                                             <span className="d-flex align-items-center gap-3">
                                                 <span className="flex-shrink-0 position-relative">
@@ -637,7 +633,6 @@ function Customers() {
                                                 </button>
                                             </span>
                                         </div>
-
                                         <div className="dropdown-item notification-item py-2 text-wrap" id="message-7">
                                             <span className="d-flex align-items-center gap-3">
                                                 <span className="flex-shrink-0 position-relative">
@@ -738,7 +733,6 @@ function Customers() {
                                     </div>
                                 </a>
                                 <div className="dropdown-menu dropdown-menu-end">
-                            
                                     <div className="dropdown-header noti-title">
                                         <h6 className="text-overflow m-0">Welcome back 👋!</h6>
                                     </div>
@@ -747,7 +741,6 @@ function Customers() {
                                         <i className="ti ti-user-circle me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Profile</span>
                                     </a>
-
                                     <a href="javascript:void(0);" className="dropdown-item">
                                         <i className="ti ti-bell-ringing me-1 fs-lg align-middle"></i>
                                         <span className="align-middle">Notifications</span>
@@ -781,7 +774,6 @@ function Customers() {
                 </div>
             </header>
  <div className="sidenav-menu">
-  
     <a href="index.html" className="logo">
         <span className="logo logo-light">
             <span className="logo-lg"><img src="assets/images/logo.png" alt="logo" /></span>
@@ -793,7 +785,6 @@ function Customers() {
             <span className="logo-sm"><img src="assets/images/logo-sm.png" alt="small logo" /></span>
         </span>
     </a>
-
     <button className="button-on-hover">
         <span className="btn-on-hover-icon"></span>
     </button>
@@ -818,11 +809,9 @@ function Customers() {
                     </a>
 
                     <div className="dropdown-menu">
-                  
                         <div className="dropdown-header noti-title">
                             <h6 className="text-overflow m-0">Welcome back!</h6>
                         </div>
-
                         <a href="#!" className="dropdown-item">
                             <i className="ti ti-user-circle me-1 fs-lg align-middle"></i>
                             <span className="align-middle">Profile</span>
@@ -846,7 +835,6 @@ function Customers() {
                 </div>
             </div>
         </div>
-
         <div id="sidenav-menu">
             <ul className="side-nav">
                 <li className="side-nav-title mt-2" data-lang="main">Main</li>
@@ -2800,33 +2788,60 @@ function Customers() {
                 <div className="container-fluid">
                     <div className="page-title-head d-flex align-items-center">
                         <div className="flex-grow-1">
-                            <h4 className="page-main-title m-0">Customers</h4>
+                            <h4 className="page-main-title m-0">Purchased Orders</h4>
                         </div>
 
                         <div className="text-end">
                             <ol className="breadcrumb m-0 py-0">
                                 <li className="breadcrumb-item"><a href="javascript: void(0);">Paces</a></li>
                                 <li className="breadcrumb-item"><a href="javascript: void(0);">Ecommerce</a></li>
-                                <li className="breadcrumb-item active">Customers</li>
+                                <li className="breadcrumb-item active">Purchased Orders</li>
                             </ol>
                         </div>
                     </div>
 
 
                     <div className="row">
-                        <div className="col-xxl-12">
-                            <div data-table data-table-rows-per-page="8" className="card">
-                                <div className="card-header border-light d-flex align-items-center justify-content-between flex-wrap gap-2">
+                        <div className="col-12">
+                            <div data-table data-table-rows-per-page="10" className="card">
+                                <div className="card-header border-light justify-content-between">
                                     <div className="d-flex gap-2">
                                         <div className="app-search">
-                                            <input data-table-search type="search" className="form-control" placeholder="Search customer..." />
+                                            <input data-table-search type="search" className="form-control" placeholder="Search..." />
                                             <i className="ti ti-search app-search-icon text-muted"></i>
                                         </div>
                                         <button data-table-delete-selected className="btn btn-danger d-none">Delete</button>
                                     </div>
 
-                                    <div className="d-flex align-items-center gap-2">
-                                    
+                                    <div className="d-flex align-items-center gap-2 flex-wrap">
+                                        <span className="me-2 fw-semibold">Filter By:</span>
+
+                                        <div className="app-search">
+                                            <select data-table-filter="payment-status" className="form-select form-control my-1 my-md-0">
+                                                <option value="All">Payment Status</option>
+                                                <option value="Paid">Paid</option>
+                                                <option value="Pending">Pending</option>
+                                                <option value="Unpaid">Unpaid</option>
+                                                <option value="Overdue">Overdue</option>
+                                            </select>
+                                            <i className="ti ti-credit-card app-search-icon text-muted"></i>
+                                        </div>
+
+                                        <div className="app-search">
+                                            <select data-table-filter="order-status" className="form-select form-control my-1 my-md-0">
+                                                <option value="All">Order Status</option>
+                                                <option value="Completed">Completed</option>
+                                                <option value="Processing">Processing</option>
+                                                <option value="Partially Received">Partially Received</option>
+                                                <option value="Pending Delivery">Pending Delivery</option>
+                                                <option value="Awaiting Delivery">Awaiting Delivery</option>
+                                                <option value="Awaiting Shipment">Awaiting Shipment</option>
+                                                <option value="Cancelled">Cancelled</option>
+                                                <option value="In Progress">In Progress</option>
+                                            </select>
+                                            <i className="ti ti-truck app-search-icon text-muted"></i>
+                                        </div>
+
                                         <div>
                                             <select data-table-set-rows-per-page className="form-select form-control my-1 my-md-0">
                                                 <option value="5">5</option>
@@ -2835,336 +2850,384 @@ function Customers() {
                                                 <option value="20">20</option>
                                             </select>
                                         </div>
+                                    </div>
 
-                                        <div className="dropdown">
-                                            <button className="btn btn-default dropdown-toggle drop-arrow-none" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i className="ti ti-download me-1"></i> Export <i className="ti ti-chevron-down align-middle ms-1"></i></button>
-                                            <ul className="dropdown-menu dropdown-menu-end">
-                                                <li><a className="dropdown-item" href="#">Export as PDF</a></li>
-                                                <li><a className="dropdown-item" href="#">Export as CSV</a></li>
-                                                <li><a className="dropdown-item" href="#">Export as Excel</a></li>
-                                            </ul>
-                                        </div>
-
-                                        <a href="#!" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCustomerModal"> <i className="ti ti-plus me-1 fs-sm"></i> Add Customer </a>
+                                    <div className="d-flex gap-1">
+                                        <a href="#addPurchaseOrderModal" className="btn btn-danger ms-1" data-bs-toggle="modal"> <i className="ti ti-plus fs-sm me-2"></i> Add New </a>
                                     </div>
                                 </div>
 
                                 <div className="table-responsive">
                                     <table className="table table-custom table-centered table-select table-hover w-100 mb-0">
-                                        <thead className="bg-light bg-opacity-25 thead-sm">
+                                        <thead className="bg-light align-middle bg-opacity-25 thead-sm">
                                             <tr className="text-uppercase fs-xxs">
                                                 <th className="ps-3" style="width: 1%">
-                                                    <input data-table-select-all className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" id="select-all-products" />
+                                                    <input data-table-select-all className="form-check-input form-check-input-light fs-14 mt-0" type="checkbox" id="select-all-orders" />
                                                 </th>
-                                                <th data-table-sort="customer">Clients Name</th>
-                                                <th data-table-sort>Email</th>
-                                                <th data-table-sort>Phone</th>
-                                                <th data-table-sort>Country</th>
-                                                <th data-table-sort>Joined</th>
-                                                <th data-table-sort>Orders</th>
-                                                <th data-table-sort>Total Spends</th>
-                                                <th className="text-center">Actions</th>
+                                                <th data-table-sort>PO Number</th>
+                                                <th data-table-sort>Supplier</th>
+                                                <th data-table-sort>Items</th>
+                                                <th data-table-sort>Order Date</th>
+                                                <th data-table-sort>Delivery Date</th>
+                                                <th data-table-sort>Total Amount</th>
+                                                <th data-table-sort data-column="payment-status">Payment Status</th>
+                                                <th data-table-sort data-column="order-status">Order Status</th>
+                                                <th className="text-center" style="width: 1%">Actions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
                                                 </td>
                                                 <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-7.jpg" alt="avatar-7" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Carlos Méndez</a>
-                                                            </h5>
-                                                        </div>
+                                                    <a href="#!" className="fw-semibold link-reset">PO-2025-0148</a>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">TechVision Supplies</h6>
+                                                        <p className="text-muted fs-xs mb-0">techvision&#64;email.com</p>
                                                     </div>
                                                 </td>
-                                                <td>carlos&#64;techlaunch.mx</td>
-                                                <td>+1 (415) 992-3412</td>
-                                                <td><img src="assets/images/flags/us.svg" alt="" className="rounded-circle me-1" height="16" /> United States</td>
-                                                <td>2 Feb, 2024 <small className="text-muted">08:34 AM</small></td>
-                                                <td>58</td>
-                                                <td>$198.25</td>
+                                                <td>12 Items</td>
+                                                <td>05 Oct, 2025 <small className="text-muted">09:15 AM</small></td>
+                                                <td>10 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$3,480.00</h5></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
+                                                    <span className="badge badge-label badge-soft-success fs-xxs">Paid</span>
+                                                </td>
+                                                <td>
+                                                    <span className="badge badge-label badge-soft-primary fs-xxs">Received</span>
+                                                </td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
 
                                             <tr>
                                                 <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
                                                 </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0149</a></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-2.jpg" alt="avatar-2" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Sophie Laurent</a>
-                                                            </h5>
-                                                        </div>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">Global Stationers</h6>
+                                                        <p className="text-muted fs-xs mb-0">orders&#64;globalstationers.com</p>
                                                     </div>
                                                 </td>
-                                                <td>sophie.laurent&#64;eurotech.fr</td>
-                                                <td>+33 6 12 34 56 78</td>
-                                                <td><img src="assets/images/flags/fr.svg" alt="" className="rounded-circle me-1" height="16" /> France</td>
-                                                <td>15 Mar, 2024 <small className="text-muted">10:22 AM</small></td>
-                                                <td>42</td>
-                                                <td>$245.80</td>
+                                                <td>8 Items</td>
+                                                <td>06 Oct, 2025 <small className="text-muted">02:45 PM</small></td>
+                                                <td>12 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$1,260.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-warning fs-xxs">Pending</span></td>
+                                                <td><span className="badge badge-label badge-soft-info fs-xxs">Processing</span></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0150</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">NextGen Components</h6>
+                                                        <p className="text-muted fs-xs mb-0">support&#64;nextgen.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>25 Items</td>
+                                                <td>02 Oct, 2025 <small className="text-muted">11:05 AM</small></td>
+                                                <td>09 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$7,920.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Paid</span></td>
+                                                <td><span className="badge badge-label badge-soft-warning fs-xxs">Partially Received</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0151</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">EcoHome Essentials</h6>
+                                                        <p className="text-muted fs-xs mb-0">contact&#64;ecohome.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>5 Items</td>
+                                                <td>04 Oct, 2025 <small className="text-muted">03:30 PM</small></td>
+                                                <td>09 Oct, 2025 <small className="text-muted">Delivered</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$980.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-danger fs-xxs">Unpaid</span></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Completed</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0152</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">BrightLine Textiles</h6>
+                                                        <p className="text-muted fs-xs mb-0">info&#64;brightline.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>16 Items</td>
+                                                <td>07 Oct, 2025 <small className="text-muted">08:20 AM</small></td>
+                                                <td>14 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$4,250.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Paid</span></td>
+                                                <td><span className="badge badge-label badge-soft-warning fs-xxs">Pending Delivery</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0153</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">Urban Office Supplies</h6>
+                                                        <p className="text-muted fs-xs mb-0">sales&#64;urbanoffice.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>9 Items</td>
+                                                <td>03 Oct, 2025 <small className="text-muted">01:10 PM</small></td>
+                                                <td>07 Oct, 2025 <small className="text-muted">Delivered</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$2,340.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-danger fs-xxs">Overdue</span></td>
+                                                <td><span className="badge badge-label badge-soft-danger fs-xxs">Cancelled</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0154</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">Northway Electronics</h6>
+                                                        <p className="text-muted fs-xs mb-0">contact&#64;northway.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>14 Items</td>
+                                                <td>08 Oct, 2025 <small className="text-muted">10:00 AM</small></td>
+                                                <td>15 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$5,610.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-warning fs-xxs">Pending</span></td>
+                                                <td><span className="badge badge-label badge-soft-info fs-xxs">In Progress</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0155</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">Apex Industrial Tools</h6>
+                                                        <p className="text-muted fs-xs mb-0">sales&#64;apextools.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>20 Items</td>
+                                                <td>01 Oct, 2025 <small className="text-muted">04:30 PM</small></td>
+                                                <td>06 Oct, 2025 <small className="text-muted">Delivered</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$9,875.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Paid</span></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Completed</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td className="ps-3">
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
+                                                </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0156</a></td>
+                                                <td>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">GreenLeaf Packaging</h6>
+                                                        <p className="text-muted fs-xs mb-0">hello&#64;greenleafpack.com</p>
+                                                    </div>
+                                                </td>
+                                                <td>7 Items</td>
+                                                <td>09 Oct, 2025 <small className="text-muted">11:50 AM</small></td>
+                                                <td>15 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$2,120.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-warning fs-xxs">Pending</span></td>
+                                                <td><span className="badge badge-label badge-soft-secondary fs-xxs">Awaiting Shipment</span></td>
+                                                <td>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
                                                 </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0157</a></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-3.jpg" alt="avatar-3" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Akira Tanaka</a>
-                                                            </h5>
-                                                        </div>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">BlueSky Furnishings</h6>
+                                                        <p className="text-muted fs-xs mb-0">orders&#64;bluesky.com</p>
                                                     </div>
                                                 </td>
-                                                <td>akira.tanaka&#64;techjapan.co.jp</td>
-                                                <td>+81 90-1234-5678</td>
-                                                <td><img src="assets/images/flags/jp.svg" alt="" className="rounded-circle me-1" height="16" /> Japan</td>
-                                                <td>28 Jan, 2024 <small className="text-muted">03:15 PM</small></td>
-                                                <td>75</td>
-                                                <td>$320.50</td>
+                                                <td>10 Items</td>
+                                                <td>06 Oct, 2025 <small className="text-muted">09:40 AM</small></td>
+                                                <td>11 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$3,950.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-success fs-xxs">Paid</span></td>
+                                                <td><span className="badge badge-label badge-soft-info fs-xxs">Awaiting Delivery</span></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-4.jpg" alt="avatar-4" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Emma Watson</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>emma.watson&#64;britinnovate.uk</td>
-                                                <td>+44 7700 900123</td>
-                                                <td><img src="assets/images/flags/gb.svg" alt="" className="rounded-circle me-1" height="16" /> United Kingdom</td>
-                                                <td>10 Apr, 2024 <small className="text-muted">09:47 AM</small></td>
-                                                <td>29</td>
-                                                <td>$175.30</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
+                                                    <input className="form-check-input form-check-input-light fs-14 order-item-check mt-0" type="checkbox" value="option" />
                                                 </td>
+                                                <td><a href="#!" className="fw-semibold link-reset">PO-2025-0158</a></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-5.jpg" alt="avatar-5" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Lucas Schmidt</a>
-                                                            </h5>
-                                                        </div>
+                                                    <div>
+                                                        <h6 className="mb-0 fw-medium fs-base">PrimeTech Hardware</h6>
+                                                        <p className="text-muted fs-xs mb-0">info&#64;primetech.com</p>
                                                     </div>
                                                 </td>
-                                                <td>lucas.schmidt&#64;techdeutsch.de</td>
-                                                <td>+49 151 23456789</td>
-                                                <td><img src="assets/images/flags/de.svg" alt="" className="rounded-circle me-1" height="16" /> Germany</td>
-                                                <td>20 Feb, 2024 <small className="text-muted">02:10 PM</small></td>
-                                                <td>63</td>
-                                                <td>$280.75</td>
+                                                <td>18 Items</td>
+                                                <td>05 Oct, 2025 <small className="text-muted">05:25 PM</small></td>
+                                                <td>13 Oct, 2025 <small className="text-muted">Expected</small></td>
+                                                <td><h5 className="fs-base mb-0 fw-medium">$6,730.00</h5></td>
+                                                <td><span className="badge badge-label badge-soft-danger fs-xxs">Overdue</span></td>
+                                                <td><span className="badge badge-label badge-soft-danger fs-xxs">Cancelled</span></td>
                                                 <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-6.jpg" alt="avatar-6" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Isabella Rossi</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>isabella.rossi&#64;italiatech.it</td>
-                                                <td>+39 333 4567890</td>
-                                                <td><img src="assets/images/flags/it.svg" alt="" className="rounded-circle me-1" height="16" /> Italy</td>
-                                                <td>5 Mar, 2024 <small className="text-muted">11:25 AM</small></td>
-                                                <td>51</td>
-                                                <td>$210.40</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-8.jpg" alt="avatar-8" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Mateo Vargas</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>mateo.vargas&#64;latamtech.ar</td>
-                                                <td>+54 9 11 2345 6789</td>
-                                                <td><img src="assets/images/flags/ar.svg" alt="" className="rounded-circle me-1" height="16" /> Argentina</td>
-                                                <td>18 Apr, 2024 <small className="text-muted">04:50 PM</small></td>
-                                                <td>37</td>
-                                                <td>$190.20</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-9.jpg" alt="avatar-9" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Priya Sharma</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>priya.sharma&#64;indotech.in</td>
-                                                <td>+91 98765 43210</td>
-                                                <td><img src="assets/images/flags/in.svg" alt="" className="rounded-circle me-1" height="16" /> India</td>
-                                                <td>10 Jan, 2024 <small className="text-muted">06:30 AM</small></td>
-                                                <td>82</td>
-                                                <td>$350.90</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-10.jpg" alt="avatar-10" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Liam O’Connor</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>liam.oconnor&#64;ausinnovate.au</td>
-                                                <td>+61 400 123 456</td>
-                                                <td><img src="assets/images/flags/au.svg" alt="" className="rounded-circle me-1" height="16" /> Australia</td>
-                                                <td>25 Mar, 2024 <small className="text-muted">01:15 PM</small></td>
-                                                <td>45</td>
-                                                <td>$230.65</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td className="ps-3">
-                                                    <input className="form-check-input form-check-input-light fs-14" type="checkbox" value="option" />
-                                                </td>
-                                                <td>
-                                                    <div className="d-flex align-items-center gap-2">
-                                                        <div className="avatar avatar-sm">
-                                                            <img src="assets/images/users/user-1.jpg" alt="avatar-1" className="img-fluid rounded-circle" />
-                                                        </div>
-                                                        <div>
-                                                            <h5 className="mb-0">
-                                                                <a data-sort="customer" href="#!" className="link-reset">Olga Petrova</a>
-                                                            </h5>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td>olga.petrova&#64;rus-tech.ru</td>
-                                                <td>+7 912 345 67 89</td>
-                                                <td><img src="assets/images/flags/ru.svg" alt="" className="rounded-circle me-1" height="16" /> Russia</td>
-                                                <td>8 Feb, 2024 <small className="text-muted">07:40 AM</small></td>
-                                                <td>68</td>
-                                                <td>$295.15</td>
-                                                <td>
-                                                    <div className="d-flex align-items-center justify-content-center gap-1">
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-eye fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" className="btn btn-default btn-icon btn-sm"> <i className="ti ti-edit fs-lg"></i></a>
-                                                        <a href="javascript:void(0);" data-table-delete-row className="btn btn-default btn-icon btn-sm"> <i className="ti ti-trash fs-lg"></i></a>
+                                                    <div className="d-flex justify-content-center gap-1">
+                                                        <a href="#!" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-eye fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-edit fs-lg"></i>
+                                                        </a>
+                                                        <a href="#" data-table-delete-row className="btn btn-default btn-icon btn-sm">
+                                                            <i className="ti ti-trash fs-lg"></i>
+                                                        </a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -3173,67 +3236,90 @@ function Customers() {
                                 </div>
                                 <div className="card-footer border-0">
                                     <div className="d-flex justify-content-between align-items-center">
-                                        <div data-table-pagination-info="customers"></div>
-
+                                        <div data-table-pagination-info="products"></div>
                                         <div data-table-pagination></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="modal fade" id="addCustomerModal" tabindex="-1" aria-labelledby="addCustomerModalLabel" aria-hidden="true">
-                        <div className="modal-dialog modal-lg modal-dialog-centered">
+                    <div className="modal fade" id="addPurchaseOrderModal" tabindex="-1" aria-labelledby="addPurchaseOrderModalLabel" aria-hidden="true">
+                        <div className="modal-dialog modal-dialog-centered modal-lg">
                             <div className="modal-content">
                                 <div className="modal-header">
-                                    <h5 className="modal-title" id="addCustomerModalLabel">Add New Customer</h5>
+                                    <h5 className="modal-title fw-semibold" id="addPurchaseOrderModalLabel"><i className="ti ti-file-text me-2 text-danger"></i> Add New Purchase Order</h5>
                                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
 
-                                <form id="addCustomerForm">
+                                <form action="#!" method="post">
                                     <div className="modal-body">
                                         <div className="row g-3">
                                             <div className="col-md-6">
-                                                <label for="customerName" className="form-label">Full Name</label>
-                                                <input type="text" className="form-control" id="customerName" placeholder="e.g. Carlos Méndez" required />
+                                                <label for="poNumber" className="form-label fw-semibold">PO Number</label>
+                                                <input type="text" id="poNumber" className="form-control" placeholder="PO-2025-0149" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerEmail" className="form-label">Email</label>
-                                                <input type="email" className="form-control" id="customerEmail" placeholder="e.g. carlos&#64;domain.com" required />
+                                                <label for="supplierName" className="form-label fw-semibold">Supplier Name</label>
+                                                <input type="text" id="supplierName" className="form-control" placeholder="Global Tech Supplies" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerPhone" className="form-label">Phone</label>
-                                                <input type="tel" className="form-control" id="customerPhone" placeholder="+1 (415) 992-3412" required />
+                                                <label for="supplierEmail" className="form-label fw-semibold">Supplier Email</label>
+                                                <input type="email" id="supplierEmail" className="form-control" placeholder="globaltech&#64;email.com" />
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerCountry" className="form-label">Country</label>
-                                                <select className="form-select" id="customerCountry" required>
-                                                    <option value="">Select Country</option>
-                                                    <option value="United States">🇺🇸 United States</option>
-                                                    <option value="Canada">🇨🇦 Canada</option>
-                                                    <option value="United Kingdom">🇬🇧 United Kingdom</option>
-                                                    <option value="India">🇮🇳 India</option>
+                                                <label for="poItems" className="form-label fw-semibold">Items Count</label>
+                                                <input type="number" id="poItems" className="form-control" placeholder="10" />
+                                            </div>
 
+                                            <div className="col-md-6">
+                                                <label for="orderDate" className="form-label fw-semibold">Order Date</label>
+                                                <input id="orderDate" type="date" className="form-control" data-provider="flatpickr" data-date-format="d M, Y" value="2025-10-05" />
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="deliveryDate" className="form-label fw-semibold">Delivery Date</label>
+                                                <input id="deliveryDate" type="date" className="form-control" data-provider="flatpickr" data-date-format="d M, Y" value="2025-10-10" />
+                                            </div>
+                                            <div className="col-md-6">
+                                                <label for="totalAmount" className="form-label fw-semibold">Total Amount</label>
+                                                <div className="input-group">
+                                                    <span className="input-group-text">$</span>
+                                                    <input type="number" id="totalAmount" className="form-control" placeholder="3480.00" step="0.01" />
+                                                </div>
+                                            </div>
+
+                                            <div className="col-md-6">
+                                                <label for="paymentStatus" className="form-label fw-semibold">Payment Status</label>
+                                                <select id="paymentStatus" className="form-select">
+                                                    <option selected>Paid</option>
+                                                    <option>Pending</option>
+                                                    <option>Partially Paid</option>
+                                                    <option>Unpaid</option>
                                                 </select>
                                             </div>
 
                                             <div className="col-md-6">
-                                                <label for="customerAvatar" className="form-label">Avatar</label>
-                                                <input type="file" className="form-control" id="customerAvatar" accept="image/*" />
+                                                <label for="orderStatus" className="form-label fw-semibold">Order Status</label>
+                                                <select id="orderStatus" className="form-select">
+                                                    <option selected>Received</option>
+                                                    <option>Processing</option>
+                                                    <option>Dispatched</option>
+                                                    <option>Cancelled</option>
+                                                </select>
                                             </div>
-
-                                            <div className="col-md-6">
-                                                <label for="joinedDate" className="form-label">Join Date</label>
-                                                <input type="date" className="form-control" id="joinedDate" data-provider="flatpickr" data-date-format="d M, Y" required />
+                                            <div className="col-md-12">
+                                                <label for="poNotes" className="form-label fw-semibold">Additional Notes</label>
+                                                <textarea id="poNotes" className="form-control" rows="2" placeholder="Add any special instructions or remarks here..."></textarea>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="modal-footer">
                                         <button type="button" className="btn btn-light" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="submit" className="btn btn-primary">Add Customer</button>
+                                        <button type="submit" className="btn btn-danger"><i className="ti ti-check me-1"></i> Save Purchase Order</button>
                                     </div>
                                 </form>
                             </div>
@@ -3261,7 +3347,6 @@ function Customers() {
                 </footer>
 
             </div>
-
         </div>
 
         <div className="offcanvas offcanvas-end overflow-hidden" tabindex="-1" id="theme-settings-offcanvas">
@@ -3838,4 +3923,4 @@ function Customers() {
   )
 }
 
-export default Customers
+export default PurchasedOrders
