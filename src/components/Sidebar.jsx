@@ -148,8 +148,7 @@ function Sidebar() {
                             </li>
                         </ul>
                     </div>
-                </li> 
-             
+                </li>
                 {/* Apps */}
                 <li className="side-nav-title mt-2" data-lang="apps">
                   Apps
